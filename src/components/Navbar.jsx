@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {  useNavigate } from 'react-router-dom'; 
-import abc from '../assets/butterfly.jpg';
+
 import { BsFacebook, BsGoogle, BsInstagram } from 'react-icons/bs';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
@@ -29,22 +29,22 @@ const Navbar = () => {
     navigate('/');
   };
 
-  const handleSanitaryPadsClick = () => {
+  const handleSpeechTherapy = () => {
     setShowDropdown(false); 
    
-    navigate('/sanitary-pads');
+    navigate('/speech-and-language-therapy');
   };
 
-  const handleAdultDiapersClick = () => {
+  const handleHearingTrial = () => {
     setShowDropdown(false); 
    
-    navigate('/adult-diaper');
+    navigate('/hearing-aid-and-trial-fittings');
   };
 
-  const handleBabyDiapersClick = () => {
+  const handleHearingTests = () => {
     setShowDropdown(false); 
    
-    navigate('/baby-diaper');
+    navigate('/hearing-tests');
   };
 
 
@@ -64,7 +64,7 @@ const Navbar = () => {
 
 
         <div className=" hidden lg:flex text-[20px] 2xl:text-[40px] gap-16 text-red-500 cursor-pointer items-center">
-        <Link to='/about'>
+        <Link to='/'>
           <div className="hover:text-gray-400 hover:bg-red-200 px-2 py-2 rounded-md">HOME</div>
           </Link> 
           <div
@@ -80,14 +80,14 @@ const Navbar = () => {
               <div className="absolute top-12 2xl:top-20 text-[15px] 2xl:text-[30px]  bg-white pl-3 2xl:pl-5 gap-7 z-[1] rounded shadow w-[160px] 2xl:w-[280px]">
                 <div className="flex flex-col gap-3 pt-2 pb-4   ">
                   {/* Use the handleAllProductsClick function when clicking on the link */}
-                  <Link to='/'>
-                  <div className='hover:text-[#ec7676]' onClick={handleAllProductsClick}>Hearing Tests</div>
+                  <Link to='/hearing-tests'>
+                  <div className='hover:text-[#ec7676]' onClick={handleHearingTests}>Hearing Tests</div>
                   </Link>
-                  <Link to='/sanitary-pads'>
-                  <div className="hover:text-[#ec7676]"  onClick={handleSanitaryPadsClick}>Speech And Language Therapy</div>
+                  <Link to='/speech-and-language-therapy'>
+                  <div className="hover:text-[#ec7676]"  onClick={handleSpeechTherapy}>Speech And Language Therapy</div>
                   </Link>
-                  <Link to='/adult-diaper'>
-                  <div className="hover:text-[#ec7676]" onClick={handleAdultDiapersClick}>Hearing Aid Trial and Fittings</div>
+                  <Link to='/hearing-aid-trial-and-fittings'>
+                  <div className="hover:text-[#ec7676]" onClick={handleHearingTrial}>Hearing Aid Trial and Fittings</div>
                   </Link>
                  
                 </div>
@@ -110,9 +110,9 @@ const Navbar = () => {
     </div>
     <div className="flex gap-2">
       <div className="flex justify-center items-center w-[80px] pl-5px">
-        <img src={abc} alt="logo" className="h-[50px] w-[50px] rounded-full" />
+        <MdHearing className="h-[50px] w-[50px] rounded-full text-red-600" />
       </div>
-      <div className="font-semibold text-lg">Aawaz Hearing And Speech Care Center</div>
+      <div className="font-semibold text-lg text-red-600">Aawaz Hearing And Speech Care Center</div>
     </div>
 
     {/* Services Dropdown */}
@@ -126,13 +126,13 @@ const Navbar = () => {
       </div>
       {showDropdown && (
         <div className="absolute top-12 flex flex-col gap-3 pt-2 pb-4">
-          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleAllProductsClick}>
+          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleHearingTests}>
             Hearing Tests
           </div>
-          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleSanitaryPadsClick}>
+          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleSpeechTherapy}>
             Speech And Language Therapy
           </div>
-          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleAdultDiapersClick}>
+          <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={handleHearingTrial}>
             Hearing Aid Trial and Fittings
           </div>
         </div>
@@ -146,9 +146,9 @@ const Navbar = () => {
       </div>
     </Link>
 
-    <Link to='/media'>
+    <Link to='/products'>
       <div className='border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2'>
-        <div>Media</div>
+        <div>Products</div>
       </div>
     </Link>
 
@@ -182,7 +182,7 @@ const Navbar = () => {
 
 <div className="transition-transform duration-200 transform hover:scale-125 cursor-pointer  hidden md:block lg:hidden">
   
-<img src={abc} alt="logo" className="h-[60px] w-[60px] rounded-full" />
+<MdHearing className="h-[60px] w-[60px] rounded-full text-red-600" />
 
 </div>
 

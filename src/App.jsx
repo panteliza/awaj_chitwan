@@ -2,12 +2,15 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
+
 import Home from './pages/Home';
-// import Contact from './pages/Contact';
-// import About from './pages/About';
-// import AdultDiapers from './pages/AdultDiapers';
-// import Media from './pages/Media';
-// import Blog1 from './pages/Blog1';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import HearingTest from './pages/HearingTest';
+import SpeechLanguageTherapy from './pages/SpeechLanguageTherapy';
+import HearingAidTrialsAndFittings from './pages/HearingAid';
+
+
 
 const App = () => {
   return (
@@ -16,17 +19,19 @@ const App = () => {
       
         <Routes>
        
-          {/* <Route path="/baby-diaper" element={<Diapers />} />
+          
           <Route path="/about" element={<About />} />
-          <Route path="/breaking-barriers" element={<Blog1 />} />
+          
           <Route path="/contact" element={<Contact />} />
-          <Route path="/sanitary-pads" element={<Pads />} />
-          <Route path="/adult-diaper" element={<AdultDiapers/>} />          
-          <Route path="/media" element={<Media/>} />           */}
+          <Route path="/hearing-tests" element={<HearingTest />} />
+          <Route path="/hearing-aid-trial-and-fittings" element={<HearingAidTrialsAndFittings />} />
+          <Route path="/speech-and-language-therapy" element={<SpeechLanguageTherapy />} />
+         
+              
          
           <Route path="/" element={<Home />} />
            
-          {/* <Route path="/elanta" element={<Home />} />   */}
+          <Route path="/aawaz" element={<Home />} />  
          
         </Routes>
       </div>
