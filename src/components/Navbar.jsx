@@ -78,13 +78,13 @@ const Navbar = () => {
             <div className="font-semibold text-sm text-red-600">Aawaz Hearing And Speech Care Center</div>
           </div>
           <Link to='/'>
-            <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2">Home</div>
+            <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2 hover:text-red-500">Home</div>
           </Link>
 
           {/* Services Dropdown */}
           {/* Services Dropdown */}
 <div
-  className={`border border-gray-400 relative flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2 cursor-pointer`}
+  className={`border border-gray-400 relative flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2 cursor-pointer`}
   onClick={toggleDropdown}
 >
   <div>SERVICES</div>
@@ -93,19 +93,19 @@ const Navbar = () => {
   </div>
   {showDropdown && (
     <div className="absolute top-[100%] translate-y-2 flex flex-col gap-3 pt-2 pb-4 bg-white shadow-md rounded">
-      <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
-      <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
-      <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
+      <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
+      <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
+      <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
     </div>
   )}
 </div>
 
           {/* Additional Links */}
           <Link to='/about'>
-            <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2">About</div>
+            <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2">About</div>
           </Link>
           <Link to='/contact'>
-            <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2">Contact</div>
+            <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2">Contact</div>
           </Link>
           <div className='flex ml-[100px] gap-2 text-red-400 cursor-pointer text-[25px]'>
             <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
