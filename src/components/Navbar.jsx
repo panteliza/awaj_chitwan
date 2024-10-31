@@ -78,12 +78,11 @@ const Navbar = () => {
             <div className="font-semibold text-sm text-red-600">Aawaz Hearing And Speech Care Center</div>
           </div>
           <Link to='/'>
-            <div className="border border-gray-400 flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2 hover:text-red-500">Home</div>
+            <div className="border border-gray-200 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2 ">Home</div>
           </Link>
-
-          {/* Services Dropdown */}
-          {/* Services Dropdown */}
-<div
+{/* Services Dropdown */}
+ {/* Services Dropdown */}
+ <div
   className={`border border-gray-400 relative flex gap-2 text-gray-200 items-center w-[250px] justify-center py-2 cursor-pointer`}
   onClick={toggleDropdown}
 >
