@@ -4,9 +4,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import hearing1 from '../assets/hearing1.jpg';
-import hearing2 from '../assets/hearing2.jpg';
-import hearing3 from '../assets/hearing3.jpg';
+import hearing1 from '../assets/last1.jpg';
+import hearing2 from '../assets/last2.jpg';
+import hearing3 from '../assets/last3.jpg';
 
 export default function Slider() {
   return (

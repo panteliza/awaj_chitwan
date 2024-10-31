@@ -1,21 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import aawazLogo from '../assets/aawaz.jpeg';
-import { BsFacebook, BsGoogle, BsInstagram, BsTelephoneFill, BsWhatsapp } from 'react-icons/bs';
+import { BsFacebook, BsGoogle, BsWhatsapp,BsTelephoneFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn, MdHearing } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import footerbgimage from '../assets/footerpic.jpg';
 
 const Footer = () => {
   const navItems1 = [
-    { icon: <MdHearing className='text-red-800' />, link: "/", label: "Home" },
-    { icon: <MdHearing className='text-red-800' />, link: "/about", label: "About" },
-    { icon: <MdHearing className='text-red-800' />, link: "/contact", label: "Contact" }
+    { icon: <MdHearing className='text-white' />, link: "/", label: "Home" },
+    { icon: <MdHearing className='text-white' />, link: "/about", label: "About" },
+    { icon: <MdHearing className='text-white' />, link: "/contact", label: "Contact" }
   ];
 
   const navItems2 = [
-    { icon: <MdHearing className='text-red-800' />, link: "/hearing-tests", label: "Hearing Tests And Assessments" },
-    { icon: <MdHearing className='text-red-800' />, link: "/speech-and-language-therapy", label: "Speech And Language Therapy" },
-    { icon: <MdHearing className='text-red-800' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" }
+    { icon: <MdHearing className='text-white' />, link: "/hearing-tests", label: "Hearing Tests And Assessments" },
+    { icon: <MdHearing className='text-white' />, link: "/speech-and-language-therapy", label: "Speech And Language Therapy" },
+    { icon: <MdHearing className='text-white' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" }
   ];
 
   const contactItems = [
@@ -28,7 +29,7 @@ const Footer = () => {
 
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.5, // Trigger when 50% of the element is in view
+      threshold: 0.5,
     };
 
     const handleIntersection = (entries) => {
@@ -51,30 +52,40 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className='bg-red-400'>
+    <div
+      className='relative'
+      style={{
+        backgroundImage: `url(${footerbgimage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+      }}
+    >
+      {/* Light red overlay */}
+      <div className="absolute inset-0 bg-red-600 opacity-30 z-0"></div>
+
       <div
         ref={footerRef}
-        className='flex flex-col gap-4 py-8 px-4 sm:px-7 md:flex-row justify-center items-center md:gap-16 lg:gap-24 xl:gap-32'
+        className='flex flex-col gap-4 py-8 px-4 sm:px-7 md:flex-row justify-center items-center md:gap-16 lg:gap-24 xl:gap-32 relative z-10'
         style={{
           animation: 'fadeIn 0.6s ease forwards',
           animationPlayState: 'paused',
         }}
       >
 
-
-<div className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <Link to="/">
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[63px] rounded-full" /> {/* Replaced MdHearing icon with aawazLogo */}
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[63px] rounded-full" />
           </Link>
           <div className="font-semibold text-lg text-white text-center">Aawaz Hearing And Speech Care Center</div>
-          <div className='flex gap-2 text-red-700 text-[25px]'>
-            <a href="https://www.facebook.com/aawazhearing/" className="hover:text-red-600">
+          <div className='flex gap-2 text-white text-[25px]'>
+            <a href="https://www.facebook.com/aawazhearing/" className="text-blue-800 hover:text-blue-600 ">
               <BsFacebook />
             </a>
-            <a href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200/@27.681011,84.349627,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3994fbc4ab160d6f:0x3fa4c00f10d335cb!2m2!1d84.4320284!2d27.6810354?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" className="hover:text-red-600">
+            <a href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200" className="text-yellow-800 hover:text-yellow-600  ">
               <BsGoogle />
             </a>
-            <a href="https://wa.me/9779845192771" className="hover:text-red-600"> {/* Added WhatsApp link */}
+            <a href="https://wa.me/9779845192771" className="text-green-800 hover:text-green-600 font-bold">
               <BsWhatsapp />
             </a>
           </div>
@@ -90,7 +101,8 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className='text-center py-3 font-semibold text-white'>&copy; 2024 Aawaz Hearing And Speech Care Center. All rights reserved.</div>
+
+      <div className='text-center py-3 font-semibold text-white bg-red-600'>&copy; 2024 Aawaz Hearing And Speech Care Center. All rights reserved.</div>
 
       {/* Inline CSS for custom animations */}
       <style>{`
@@ -114,7 +126,7 @@ const NavSection = ({ title, items }) => (
 const NavItem = ({ icon, link, label }) => (
   <div className='flex gap-2 items-center'>
     {icon}
-    <Link to={link} className='text-white hover:text-gray-500'>{label}</Link>
+    <Link to={link} className='text-white hover:text-gray-700'>{label}</Link>
   </div>
 );
 
