@@ -77,6 +77,9 @@ const Navbar = () => {
             </div>
             <div className="font-semibold text-sm text-red-600">Aawaz Hearing And Speech Care Center</div>
           </div>
+          <Link to='/'>
+            <div className="border border-gray-400 flex gap-2 text-gray-600 items-center w-[250px] justify-center py-2">Home</div>
+          </Link>
 
           {/* Services Dropdown */}
           {/* Services Dropdown */}
