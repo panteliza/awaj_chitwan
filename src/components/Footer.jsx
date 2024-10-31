@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import abc from '../assets/butterfly.jpg';
-import { BsFacebook, BsGoogle, BsInstagram, BsTelephoneFill } from 'react-icons/bs';
+import aawazLogo from '../assets/aawaz.jpeg';
+import { BsFacebook, BsGoogle, BsInstagram, BsTelephoneFill, BsWhatsapp } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn, MdHearing } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -14,8 +14,8 @@ const Footer = () => {
 
   const navItems2 = [
     { icon: <MdHearing className='text-red-800' />, link: "/hearing-tests", label: "Hearing Tests And Assessments" },
-    { icon: <MdHearing className='text-red-800' />, link: "/speech-therapy", label: "Speech And Language Therapy" },
-    { icon: <MdHearing className='text-red-800' />, link: "/hearing-trial", label: "Hearing Aid Trial And Fittings" }
+    { icon: <MdHearing className='text-red-800' />, link: "/speech-and-language-therapy", label: "Speech And Language Therapy" },
+    { icon: <MdHearing className='text-red-800' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" }
   ];
 
   const contactItems = [
@@ -60,9 +60,11 @@ const Footer = () => {
           animationPlayState: 'paused',
         }}
       >
-        <div className="flex flex-col items-center">
+
+
+<div className="flex flex-col items-center">
           <Link to="/">
-            <MdHearing className="h-14 w-14 rounded-full text-red-700" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[63px] rounded-full" /> {/* Replaced MdHearing icon with aawazLogo */}
           </Link>
           <div className="font-semibold text-lg text-white text-center">Aawaz Hearing And Speech Care Center</div>
           <div className='flex gap-2 text-red-700 text-[25px]'>
@@ -71,6 +73,9 @@ const Footer = () => {
             </a>
             <a href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200/@27.681011,84.349627,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3994fbc4ab160d6f:0x3fa4c00f10d335cb!2m2!1d84.4320284!2d27.6810354?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" className="hover:text-red-600">
               <BsGoogle />
+            </a>
+            <a href="https://wa.me/9779845192771" className="hover:text-red-600"> {/* Added WhatsApp link */}
+              <BsWhatsapp />
             </a>
           </div>
         </div>
@@ -109,12 +114,12 @@ const NavSection = ({ title, items }) => (
 const NavItem = ({ icon, link, label }) => (
   <div className='flex gap-2 items-center'>
     {icon}
-    <Link to={link} className='text-white'>{label}</Link>
+    <Link to={link} className='text-white hover:text-gray-500'>{label}</Link>
   </div>
 );
 
 const ContactItem = ({ icon, link, label }) => (
-  <div className='flex gap-2 items-center text-white'>
+  <div className='flex gap-2 items-center text-white hover:text-gray-400'>
     {icon}
     {link ? <a href={link}>{label}</a> : <span>{label}</span>}
   </div>

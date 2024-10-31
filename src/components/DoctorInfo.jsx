@@ -40,6 +40,24 @@ const DoctorInfo = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6 bg-gray-100">
       {/* Left Side: Doctor Information */}
+     
+
+      {/* Right Side: Doctor Image with Pink Background */}
+      <div
+        ref={rightRef}
+        className="md:w-1/2 w-full flex items-center justify-center p-4 rounded-lg opacity-0 transition-opacity duration-700 mt-8 md:mt-0"
+        style={{
+          animation: 'fadeInRight 1s ease-out forwards',
+          animationPlayState: 'paused',
+        }}
+      >
+        <img
+          src={doctor1}
+          alt="Dr. Alex Thompson"
+          className="w-60 h-59 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
       <div
         ref={leftRef}
         className="md:w-1/2 w-full p-8 text-center md:text-left opacity-0 transition-opacity duration-800"
@@ -61,22 +79,6 @@ const DoctorInfo = () => {
         >
           More About Aawaz
         </button>
-      </div>
-
-      {/* Right Side: Doctor Image with Pink Background */}
-      <div
-        ref={rightRef}
-        className="md:w-1/2 w-full flex items-center justify-center p-4 rounded-lg opacity-0 transition-opacity duration-700 mt-8 md:mt-0"
-        style={{
-          animation: 'fadeInRight 1s ease-out forwards',
-          animationPlayState: 'paused',
-        }}
-      >
-        <img
-          src={doctor1}
-          alt="Dr. Alex Thompson"
-          className="w-60 h-59 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
-        />
       </div>
 
       {/* Inline CSS for custom animations */}

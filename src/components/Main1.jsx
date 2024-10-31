@@ -18,11 +18,11 @@ export default function App() {
   };
 
   const products = [
-    { image: behinstheear, title: 'Behind-The-Ear', link: '/hearing-aid-behind-the-ear' },
-    { image: completelyincanal, title: 'Completely-In-Canal', link: '/hearing-aid-completely-in-canal' },
-    { image: invisibleinthecanal, title: 'Invisible-In-The-Canal', link: '/hearing-aid-invisible-in-the-canal' },
-    { image: intheear, title: 'In-The-Ear', link: '/hearing-aid-in-the-ear' },
-    { image: receiverincanal, title: 'Receiver-In-Canal', link: '/hearing-aid-receiver-in-canal' }
+    { image: behinstheear, title: 'Behind-The-Ear' },
+    { image: completelyincanal, title: 'Completely-In-Canal' },
+    { image: invisibleinthecanal, title: 'Invisible-In-The-Canal' },
+    { image: intheear, title: 'In-The-Ear' },
+    { image: receiverincanal, title: 'Receiver-In-Canal' }
   ];
 
   return (
