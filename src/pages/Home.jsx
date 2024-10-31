@@ -6,6 +6,9 @@ import Mission from '../components/Mission';
 import TestimonialPage from '../components/Testimonial';
 import DoctorInfo from '../components/DoctorInfo';
 import Main1 from '../components/Main1';
+import Services from '../components/Services';
+import Contact from '../components/ContactForm';
+
 
 
 const Home = () => {
@@ -16,8 +19,10 @@ const Home = () => {
       <Slider /> 
       <DoctorInfo/>
      <Main1/>
+     <Services/>
       <Mission/>
       <TestimonialPage/>
+      <Contact/>
       <Footer/>
       
     </div>

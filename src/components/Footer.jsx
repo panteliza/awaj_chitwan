@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import abc from '../assets/butterfly.jpg';
 import { BsFacebook, BsGoogle, BsInstagram, BsTelephoneFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -24,9 +24,42 @@ const Footer = () => {
     { icon: <MdLocationOn className='text-white' />, label: "Bharatpur-10, Hospital Road Chitwan" }
   ];
 
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.5, // Trigger when 50% of the element is in view
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        } else {
+          entry.target.style.animationPlayState = 'paused';
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    if (footerRef.current) observer.observe(footerRef.current);
+
+    return () => {
+      if (footerRef.current) observer.unobserve(footerRef.current);
+    };
+  }, []);
+
   return (
     <div className='bg-red-400'>
-      <div className='flex flex-col gap-4 py-8 px-4 sm:px-7 md:flex-row justify-center items-center md:gap-16 lg:gap-24 xl:gap-32'>
+      <div
+        ref={footerRef}
+        className='flex flex-col gap-4 py-8 px-4 sm:px-7 md:flex-row justify-center items-center md:gap-16 lg:gap-24 xl:gap-32'
+        style={{
+          animation: 'fadeIn 0.6s ease forwards',
+          animationPlayState: 'paused',
+        }}
+      >
         <div className="flex flex-col items-center">
           <Link to="/">
             <MdHearing className="h-14 w-14 rounded-full text-red-700" />
@@ -53,6 +86,14 @@ const Footer = () => {
         </div>
       </div>
       <div className='text-center py-3 font-semibold text-white'>&copy; 2024 Aawaz Hearing And Speech Care Center. All rights reserved.</div>
+
+      {/* Inline CSS for custom animations */}
+      <style>{`
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 };

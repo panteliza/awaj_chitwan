@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import doctor1 from '../assets/doctor1.jpeg';
 
 const DoctorInfo = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observerOptions = {
@@ -31,10 +33,36 @@ const DoctorInfo = () => {
     };
   }, []);
 
+  const handleNavigate = () => {
+    navigate('/about');
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6 bg-gray-100">
       {/* Left Side: Doctor Information */}
-      
+      <div
+        ref={leftRef}
+        className="md:w-1/2 w-full p-8 text-center md:text-left opacity-0 transition-opacity duration-800"
+        style={{
+          animation: 'fadeInLeft 1s ease-out forwards',
+          animationPlayState: 'paused',
+        }}
+      >
+        <h1 className="text-4xl md:text-4xl font-bold text-red-600">
+          MR. JAYLAL PRASAD YADAV
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-gray-600">
+          Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
+          in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as a senior lecturer (Non-Medical) audiologist and speech language pathologist in Chitwan Medical College Teaching Hospital. He has served as the clinical Director of Aawaz hearing and speech care center Bharatpur 10, Chitwan.
+        </p>
+        <button
+          onClick={handleNavigate}
+          className="bg-red-500 rounded-3xl mt-[10px] px-4 py-2 text-white text-[18px] hover:text-red-600 hover:bg-red-300"
+        >
+          More About Aawaz
+        </button>
+      </div>
+
       {/* Right Side: Doctor Image with Pink Background */}
       <div
         ref={rightRef}
@@ -50,26 +78,6 @@ const DoctorInfo = () => {
           className="w-60 h-59 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div
-        ref={leftRef}
-        className="md:w-1/2 w-full p-8 text-center md:text-left opacity-0 transition-opacity duration-800"
-        style={{
-          animation: 'fadeInLeft 1s ease-out forwards',
-          animationPlayState: 'paused',
-        }}
-      >
-        <h1 className="text-4xl md:text-4xl font-bold text-red-600">
-          MR. JAYLAL PRASAD YADAV
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-600">
-          Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
-          in Audiology and Speech Language Pathology from Dr. M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as a senior lecturer (Non-Medical) audiologist and speech language pathologist in Chitwan Medical College Teaching Hospital. He has served as the clinical Director of Aawaz hearing and speech care center Bharatpur 10, Chitwan.
-        </p>
-        <button className="bg-red-500 rounded-3xl mt-[10px] px-4 py-2 text-white text-[18px] hover:text-red-600 hover:bg-red-300">
-          More Info
-        </button>
-      </div>
-
 
       {/* Inline CSS for custom animations */}
       <style>{`

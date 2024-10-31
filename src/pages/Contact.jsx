@@ -16,7 +16,7 @@ const Contact = () => {
           We Value Your Voice! We're here to listen and to serve you better.
           </h1>
 
-          <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-600 to-pink-700">
+          <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-600 to--700">
           Your thoughts and experiences with us matter deeply, and your feedback helps us enhance our services for everyone. Whether it's a suggestion, a question, or a comment, please feel free to reach out.
           </p>
         </div>
