@@ -1,10 +1,10 @@
-// src/components/ReceiverInCanal.js
+// src/components/CompletelyInCanal.js
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import receiverInCanalImg from '../assets/receiverinthecanal.jpeg'; // Update with correct path
+import completelyInCanalImg from '../assets/completelyincanal.jpeg'; // Update with correct path
 
-const ReceiverInCanal = () => {
+const CompletelyInCanal = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -13,15 +13,15 @@ const ReceiverInCanal = () => {
         <div className="container mx-auto px-4">
           {/* Header Section */}
           <h2 className="text-center font-bold text-[28px] md:text-[36px] lg:text-[42px] text-red-600 mb-8">
-            Receiver In Canal (RIC)
+            Completely In-The-Canal (CIC)
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Left - Image */}
             <div className="flex justify-center">
               <img
-                src={receiverInCanalImg}
-                alt="Receiver in Canal Hearing Aid"
+                src={completelyInCanalImg}
+                alt="Completely in Canal Hearing Aid"
                 className="max-w-full h-auto rounded-lg shadow-lg"
               />
             </div>
@@ -32,26 +32,15 @@ const ReceiverInCanal = () => {
                 Features:
               </h3>
               <ul className="list-disc list-inside text-gray-600 space-y-3">
-                <li>
-                  Compact and discreet design, ideal for those seeking less
-                  visibility.
-                </li>
-                <li>
-                  Provides superior sound quality, especially for high-frequency
-                  sounds.
-                </li>
-                <li>
-                  Suitable for individuals with mild to severe hearing loss.
-                </li>
-                <li>
-                  Lightweight and comfortable, minimizing ear fatigue during long
-                  hours of wear.
-                </li>
-                <li>Battery options range from standard to rechargeable types.</li>
+                <li>Low-profile design for reduced visibility.</li>
+                <li>Supports mild to severe hearing loss.</li>
+                <li>Custom-molded for a secure fit.</li>
+                <li>Ideal for all ages with appropriate ear canal size.</li>
+                <li>Battery life of approximately 3-6 days.</li>
+                <li>Comfortable, even for extended wear.</li>
+                <li>Reduces wind noise for clearer sound outdoors.</li>
+                <li>Optional wireless connectivity for added convenience.</li>
               </ul>
-
-              {/* Call to Action */}
-            
             </div>
           </div>
         </div>
@@ -62,4 +51,4 @@ const ReceiverInCanal = () => {
   );
 };
 
-export default ReceiverInCanal;
+export default CompletelyInCanal;
