@@ -9,6 +9,11 @@ import About from './pages/About';
 import HearingTest from './pages/HearingTest';
 import SpeechLanguageTherapy from './pages/SpeechLanguageTherapy';
 import HearingAidTrialsAndFittings from './pages/HearingAid';
+import ReceiverInCanal from './pages/ReceiverInCanal';
+import BehindTheEar from './pages/BehindTheEar';
+import InTheEar from './pages/InTheEar';
+import InvisibleInTheCanal from './pages/InvisibleInTheCanal';
+import CompletelyInCanal from './pages/CompletelyInCanal';
 
 
 
@@ -24,9 +29,15 @@ const App = () => {
           
           <Route path="/contact" element={<Contact />} />
           <Route path="/hearing-tests" element={<HearingTest />} />
+          <Route path="/behind-the-ear" element={<BehindTheEar/>} />
+          <Route path="/in-the-ear" element={<InTheEar/>} />
+          <Route path="/completely-in-canal" element={<CompletelyInCanal/>} />
+          <Route path="/receiver-in-canal" element={<ReceiverInCanal />} />
+          <Route path="/invisible-in-the-canal" element={<InvisibleInTheCanal />} />
           <Route path="/hearing-aid-trial-and-fittings" element={<HearingAidTrialsAndFittings />} />
           <Route path="/speech-and-language-therapy" element={<SpeechLanguageTherapy />} />
          
+
               
          
           <Route path="/" element={<Home />} />
