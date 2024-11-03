@@ -18,15 +18,15 @@ export default function App() {
   };
 
   const products = [
-    { image: behinstheear, title: 'Behind-The-Ear' },
-    { image: completelyincanal, title: 'Completely-In-Canal' },
-    { image: invisibleinthecanal, title: 'Invisible-In-The-Canal' },
-    { image: intheear, title: 'In-The-Ear' },
-    { image: receiverincanal, title: 'Receiver-In-Canal' }
+    { image: behinstheear, title: 'Behind-The-Ear', link: '/behind-the-ear' },
+    { image: completelyincanal, title: 'Completely-In-Canal', link: '/completely-in-canal' },
+    { image: invisibleinthecanal, title: 'Invisible-In-The-Canal', link: '/invisible-in-the-canal' },
+    { image: intheear, title: 'In-The-Ear', link: '/in-the-ear' },
+    { image: receiverincanal, title: 'Receiver-In-Canal', link: '/receiver-in-canal' } // Link for Receiver-In-Canal
   ];
 
   return (
-    <div className="px-10  relative z-0 flex flex-col justify-center items-center py-16">
+    <div className="px-10 relative z-0 flex flex-col justify-center items-center py-16">
       <div className='flex justify-center font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500'>Our Products</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 justify-center gap-8 2xl:gap-20">
         {products.map((product, index) => (
@@ -50,7 +50,7 @@ const ProductCard = ({ image, title, isHovered, onMouseEnter, onMouseLeave, to }
   const zIndex = isHovered ? 1 : 'auto';
 
   return (
-    <Link to={to} className="no-underline"> 
+    <Link to={to} className="no-underline">
       <div
         className={`bg-white rounded-2xl h-[280px] w-[270px] 2xl:h-[300px] 2xl:w-[320px] md:w-[300px] lg:w-[300px] flex flex-col justify-center items-center p-5 border border-red-200 hover:border-gray-400 ${isHovered ? 'hover:scale-100' : 'hover:scale-90'}`}
         onMouseEnter={onMouseEnter}
