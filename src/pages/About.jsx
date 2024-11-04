@@ -60,13 +60,13 @@ const About = () => {
       </div>
 
       <div className="flex flex-col my-7 mx-4 sm:mx-0">
-        <div ref={headingRef} className="mx-5 opacity-0" style={{ animation: 'fadeIn 1s ease-out forwards', animationPlayState: 'paused' }}>
+        <div ref={headingRef} className="mx-5 opacity-0" style={{ animation: 'fadeIn 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
           <h1 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-red-600 to-purple-700 text-center">
             WE UNDERSTAND WHAT YOU NEED
           </h1>
         </div>
         <div className="flex flex-col mt-7 sm:flex-row">
-          <div ref={swiperRef} className="w-full sm:w-1/2 opacity-0 transition-opacity duration-700" style={{ animation: 'fadeInLeft 1s ease-out forwards', animationPlayState: 'paused' }}>
+          <div ref={swiperRef} className="w-full sm:w-1/2 opacity-0 transition-opacity duration-1000" style={{ animation: 'fadeInLeft 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
             <Swiper
               autoplay={{
                 delay: 2500,
@@ -92,7 +92,7 @@ const About = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div ref={textRef} className="w-full sm:w-1/2 px-4 sm:px-10 text-justify opacity-0 transition-opacity duration-700" style={{ animation: 'fadeInRight 1s ease-out forwards', animationPlayState: 'paused' }}>
+          <div ref={textRef} className="w-full sm:w-1/2 px-4 sm:px-10 text-justify opacity-0 transition-opacity duration-1000" style={{ animation: 'fadeInRight 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
             <p className="text-base sm:text-lg">
               <strong>About Aawaz Hearing and Speech Care Center</strong>
               <br /><br />
@@ -114,15 +114,15 @@ const About = () => {
       {/* Inline CSS for custom animations */}
       <style>{`
         @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(20px); }
+          0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeInLeft {
-          0% { opacity: 0; transform: translateX(-50px); }
+          0% { opacity: 0; transform: translateX(-80px); }
           100% { opacity: 1; transform: translateX(0); }
         }
         @keyframes fadeInRight {
-          0% { opacity: 0; transform: translateX(50px); }
+          0% { opacity: 0; transform: translateX(80px); }
           100% { opacity: 1; transform: translateX(0); }
         }
       `}</style>
