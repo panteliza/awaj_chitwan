@@ -9,6 +9,15 @@ const BehindTheEar = () => {
   const featuresRef = useRef(null);
 
   useEffect(() => {
+    // Initial load animation for page load effect
+    const loadAnimationElements = [headerRef.current, imageRef.current, featuresRef.current];
+    loadAnimationElements.forEach((el) => {
+      if (el) {
+        el.style.animationPlayState = 'running';
+        el.style.opacity = '1';
+      }
+    });
+
     const observerOptions = {
       threshold: 0.3,
     };
@@ -121,6 +130,22 @@ const BehindTheEar = () => {
         @keyframes fadeInRight {
           0% { opacity: 0; transform: translateX(80px); }
           100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Smaller screen adjustments for visibility */
+        @media (max-width: 768px) {
+          @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes fadeInLeft {
+            0% { opacity: 0; transform: translateX(-40px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(40px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
         }
       `}</style>
     </div>
