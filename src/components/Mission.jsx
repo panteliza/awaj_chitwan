@@ -38,12 +38,14 @@ const Mission = () => {
     {
       icon: <SlBadge className="text-[#ee4c4c] text-[40px]" />,
       title: "Our Mission",
-      text: "To empower individuals with hearing and speech challenges by providing compassionate, innovative care and personalized therapy to enhance communication, confidence, and quality of life."
+      text: "To empower individuals with hearing and speech challenges by providing compassionate, innovative care and personalized therapy to enhance communication, confidence, and quality of life.",
+      animation: 'slideInLeft 1s ease-out forwards'
     },
     {
       icon: <BiBadge className="text-[#ee4c4c] text-[40px]" />,
       title: "Our Vision",
-      text: "To be a leading center for hearing and speech health, known for transforming lives through expert care, education, and a commitment to accessibility and inclusivity."
+      text: "To be a leading center for hearing and speech health, known for transforming lives through expert care, education, and a commitment to accessibility and inclusivity.",
+      animation: 'slideInRight 1s ease-out forwards'
     }
   ];
 
@@ -56,7 +58,7 @@ const Mission = () => {
             ref={(el) => (missionRefs.current[index] = el)}
             className="flex flex-col w-full sm:w-[400px] justify-center items-center gap-5 opacity-0"
             style={{
-              animation: 'fadeInUp 1s ease-out forwards',
+              animation: section.animation,
               animationPlayState: 'paused'
             }}
           >
@@ -69,9 +71,29 @@ const Mission = () => {
 
       {/* Inline CSS for custom animations */}
       <style>{`
-        @keyframes fadeInUp {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
+        @keyframes slideInLeft {
+          0% { opacity: 0; transform: translateX(-100px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+          0% { opacity: 0; transform: translateX(100px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Media queries for smaller screens */
+        @media (max-width: 768px) {
+          .sm\\:w-[400px] {
+            width: 100%; /* Make sure it takes the full width */
+          }
+          @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-150px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
+          @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(150px); }
+            100% { opacity: 1; transform: translateX(0); }
+          }
         }
       `}</style>
     </div>
