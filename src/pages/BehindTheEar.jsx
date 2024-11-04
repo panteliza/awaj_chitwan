@@ -9,6 +9,9 @@ const BehindTheEar = () => {
   const featuresRef = useRef(null);
 
   useEffect(() => {
+    // Scroll to top on component mount
+    window.scrollTo(0, 0);
+
     // Initial load animation for page load effect
     const loadAnimationElements = [headerRef.current, imageRef.current, featuresRef.current];
     loadAnimationElements.forEach((el) => {
