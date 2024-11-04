@@ -80,7 +80,7 @@ const BehindTheEar = () => {
               <img
                 src={behindTheEarImg}
                 alt="Behind the Ear Hearing Aid"
-                className="max-w-full h-auto rounded-lg shadow-lg"
+                className="max-w-full h-auto rounded-lg shadow-lg sm:max-w-[80%] md:max-w-[70%] lg:max-w-full"
               />
             </div>
 
