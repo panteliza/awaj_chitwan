@@ -65,13 +65,13 @@ const Contact = () => {
           </p>
         </div>
 
-        <div ref={mapRef} className="text-center mt-8 opacity-0">
+        <div ref={mapRef} className="text-center mt-8">
           <a href={mapImageUrl} target="_blank" rel="noopener noreferrer">
             <img
               src={aawazlocation}
               alt="Map"
               className="mx-auto max-w-full h-auto"
-              style={{ animation: 'fadeIn 1s ease-out forwards', animationPlayState: 'paused' }}
+             
             />
           </a>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; 
 import behinstheear from '../assets/behindtheear.jpeg'; 
 import completelyincanal from '../assets/completelyincanal.jpeg';
@@ -8,6 +8,7 @@ import receiverincanal from '../assets/receiverinthecanal.jpeg';
 
 export default function App() {
   const [isHovered, setIsHovered] = useState(null);
+  const productRefs = useRef([]);
 
   const handleMouseEnter = (index) => {
     setIsHovered(index);
@@ -17,12 +18,40 @@ export default function App() {
     setIsHovered(null);
   };
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.5, // Trigger when 50% of the element is in view
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        } else {
+          entry.target.style.animationPlayState = 'paused';
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    productRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      productRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   const products = [
     { image: behinstheear, title: 'Behind-The-Ear', link: '/behind-the-ear' },
     { image: completelyincanal, title: 'Completely-In-Canal', link: '/completely-in-canal' },
     { image: invisibleinthecanal, title: 'Invisible-In-The-Canal', link: '/invisible-in-the-canal' },
     { image: intheear, title: 'In-The-Ear', link: '/in-the-ear' },
-    { image: receiverincanal, title: 'Receiver-In-Canal', link: '/receiver-in-canal' } // Link for Receiver-In-Canal
+    { image: receiverincanal, title: 'Receiver-In-Canal', link: '/receiver-in-canal' }
   ];
 
   return (
@@ -32,6 +61,7 @@ export default function App() {
         {products.map((product, index) => (
           <ProductCard
             key={index}
+            ref={(el) => (productRefs.current[index] = el)}
             image={product.image}
             title={product.title}
             isHovered={isHovered === index}
@@ -41,21 +71,46 @@ export default function App() {
           />
         ))}
       </div>
+
+      {/* Inline CSS for custom animations */}
+      <style>{`
+        @keyframes fadeInLeft {
+          0% { opacity: 0; transform: translateX(-80px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+          0% { opacity: 0; transform: translateX(80px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
     </div>
   );
 }
 
-const ProductCard = ({ image, title, isHovered, onMouseEnter, onMouseLeave, to }) => {
+const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, onMouseLeave, to }, ref) => {
   const scale = isHovered ? 1 : 0.9;
   const zIndex = isHovered ? 1 : 'auto';
+
+  // Alternate animations between left and right for each product card
+  const animation = ref?.current?.dataset?.index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight';
 
   return (
     <Link to={to} className="no-underline">
       <div
-        className={`bg-white rounded-2xl h-[280px] w-[270px] 2xl:h-[300px] 2xl:w-[320px] md:w-[300px] lg:w-[300px] flex flex-col justify-center items-center p-5 border border-red-200 hover:border-gray-400 ${isHovered ? 'hover:scale-100' : 'hover:scale-90'}`}
+        ref={ref}
+        className={`product-card bg-white rounded-2xl h-[280px] w-[270px] 2xl:h-[300px] 2xl:w-[320px] md:w-[300px] lg:w-[300px] flex flex-col justify-center items-center p-5 border border-red-200 hover:border-gray-400 ${
+          isHovered ? 'hovered' : ''
+        }`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={{ transform: `scale(${scale})`, transition: 'transform 0.3s ease', zIndex: zIndex }}
+        style={{
+          transform: `scale(${scale})`,
+          transition: 'transform 0.3s ease',
+          zIndex: zIndex,
+          animation: `${animation} 1s ease-out forwards`,
+          animationPlayState: 'paused',
+          opacity: 0, // Start hidden
+        }}
       >
         <div>
           <img src={image} alt={title} className='w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[200px] lg:h-[200px]' />
@@ -64,4 +119,4 @@ const ProductCard = ({ image, title, isHovered, onMouseEnter, onMouseLeave, to }
       </div>
     </Link>
   );
-}
+});
