@@ -24,9 +24,8 @@ const Navbar = () => {
     <div className="flex items-center justify-between w-full gap-10 lg:px-[40px] pt-[6px] pb-[6px] px-[50px]">
       {/* Logo */}
       <Link to='/'>
-        <div className="transition-transform duration-200 transform hover:scale-125 cursor-pointer">
-          {/* Adjusted image sizes */}
-          <img
+        <div className="transition-transform duration-200 transform hover:scale-125 cursor-pointer md:hidden lg:block">
+        <img
             src={aawazLogo}
             alt="Aawaz Logo"
             className="h-[50px] w-[100px] md:h-[60px] md:w-[120px] lg:h-[80px] lg:w-[160px] xl:h-[100px] xl:w-[180px] 2xl:h-[120px] 2xl:w-[200px] object-contain"
@@ -72,11 +71,11 @@ const Navbar = () => {
           <div className="flex justify-end pr-4 py-3">
             <MdOutlineClose className="text-[30px]" onClick={showIt} />
           </div>
-          <div className="flex   items-center justify-center">
-            
-              <img src={aawazLogo} alt="Aawaz Logo" className="h-[90px] w-[100px] rounded-full object-contain" />
-         
+          <div className="flex gap-2 bg-gradient-to-r from-red-300 via-red-400 to-red-300 justify-center">
           
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[60px] w-[120px] rounded-full object-contain" />
+            
+           
           </div>
           <Link to='/'>
             <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Home</div>
@@ -84,7 +83,7 @@ const Navbar = () => {
 
           {/* Services Dropdown */}
           <div
-            className={`border border-gray-200 relative flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 cursor-pointer`}
+            className="border border-gray-200 relative flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 cursor-pointer"
             onClick={toggleDropdown}
           >
             <div>SERVICES</div>
@@ -128,7 +127,7 @@ const Navbar = () => {
 
       {/* Logo in Medium Screens */}
       <div className="hidden md:block lg:hidden">
-        <img src={aawazLogo} alt="Aawaz Logo" className="h-[52px] w-[60px] rounded-full object-contain" />
+      <img src={aawazLogo} alt="Aawaz Logo" className="h-[60px] w-[120px] rounded-full object-contain" />
       </div>
 
       {/* Social Icons in Medium Screens */}
