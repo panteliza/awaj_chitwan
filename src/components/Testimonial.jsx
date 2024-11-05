@@ -6,7 +6,7 @@ const testimonialsData = [
     name: '"A life-changing Experience"',
     role: 'Sarita Shrestha',
     content:
-      "The team at Aawaz transformed my life! After struggling with hearing issues for years, I finally feel like I’m part of conversations again. Their personalized approach and expertise made me feel so cared for. Thank you",
+      "The team at Aawaj transformed my life! After struggling with hearing issues for years, I finally feel like I’m part of conversations again. Their personalized approach and expertise made me feel so cared for. Thank you",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const testimonialsData = [
     name: '“Remarkable Results!”',
     role: 'David D',
     content:
-      'Aawaz exceeded my expectations. My hearing aids are discreet and incredibly effective, and the staff is always ready to help with adjustments. I can enjoy music and conversations in a way I haven’t been able to in years. Highly recommend!',
+      'Aawaj exceeded my expectations. My hearing aids are discreet and incredibly effective, and the staff is always ready to help with adjustments. I can enjoy music and conversations in a way I haven’t been able to in years. Highly recommend!',
   },
 ];
 

@@ -10,21 +10,21 @@ const services = [
   {
     title: 'Hearing Tests',
     description:
-      'Discover the state of your hearing with our comprehensive hearing tests. At Aawaz, we offer precise assessments using advanced tools to help you take the first step towards better hearing health.',
+      'Discover the state of your hearing with our comprehensive hearing tests. At Aawaj, we offer precise assessments using advanced tools to help you take the first step towards better hearing health.',
     imgSrc: invisibleinthecanal,
     link: '/hearing-tests', // Link for this service
   },
   {
     title: 'Speech And Language Therapy',
     description:
-      'Enhance communication skills with our personalized Speech and Language Therapy. At Aawaz, we provide expert care for children and adults to overcome speech, language, and communication challenges for a better quality of life.',
+      'Enhance communication skills with our personalized Speech and Language Therapy. At Aawaj, we provide expert care for children and adults to overcome speech, language, and communication challenges for a better quality of life.',
     imgSrc: intheear,
     link: '/speech-and-language-therapy', // Link for this service
   },
   {
     title: 'Hearing Aid Trial And Fittings',
     description:
-      'Experience the perfect fit with our Hearing Aid Trial and Fitting services. At Aawaz, we offer personalized solutions to match your hearing needs, ensuring comfort, clarity, and improved hearing in every setting.',
+      'Experience the perfect fit with our Hearing Aid Trial and Fitting services. At Aawaj, we offer personalized solutions to match your hearing needs, ensuring comfort, clarity, and improved hearing in every setting.',
     imgSrc: receiverincanal,
     link: '/hearing-aid-trial-and-fittings', // Link for this service
   },

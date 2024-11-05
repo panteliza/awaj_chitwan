@@ -115,15 +115,15 @@ const About = () => {
             }}
           >
             <p className="text-base sm:text-lg">
-              <strong>About Aawaz Hearing and Speech Care Center</strong>
+              <strong>About Aawaj Hearing and Speech Care Center</strong>
               <br /><br />
-              Welcome to Aawaz Hearing and Speech Center, Bharatpur, Chitwan – your trusted partner in empowering communication and improving the quality of life for those with hearing and speech challenges. At Aawaz, we believe that everyone deserves the right to clear, confident communication and accessible support, regardless of background or circumstance.
+              Welcome to Aawaj Hearing and Speech Center, Bharatpur, Chitwan – your trusted partner in empowering communication and improving the quality of life for those with hearing and speech challenges. At Aawaj, we believe that everyone deserves the right to clear, confident communication and accessible support, regardless of background or circumstance.
               <br /><br />
               Our mission is clear: to provide high-quality hearing and speech services and products, supported by the latest technology and a compassionate team dedicated to each individual’s unique needs. From state-of-the-art hearing aids to personalized therapy services, our solutions are designed to cater to the diverse needs of individuals and families across Chitwan and beyond.
               <br /><br />
               We prioritize excellence and accessibility in our services, working closely with leading professionals and suppliers to ensure premium quality at affordable prices. Our center is committed not only to enhancing personal well-being but also to supporting the broader community’s understanding and acceptance of hearing and speech challenges.
               <br /><br />
-              At Aawaz Hearing and Speech Center, we’re more than just a service provider; we’re part of a movement toward a future where everyone can be heard and understood. Thank you for choosing Aawaz as your partner in communication and connection. Together, we’re breaking barriers and building bridges toward a more inclusive world.
+              At Aawaj Hearing and Speech Center, we’re more than just a service provider; we’re part of a movement toward a future where everyone can be heard and understood. Thank you for choosing Aawaj as your partner in communication and connection. Together, we’re breaking barriers and building bridges toward a more inclusive world.
             </p>
           </div>
         </div>

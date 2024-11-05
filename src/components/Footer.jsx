@@ -95,14 +95,14 @@ const Footer = () => {
         <NavSection title="Services" items={navItems2} />
 
         <div className='flex flex-col items-center font-semibold text-[18px] gap-2'>
-          <div className="font-bold text-[20px] text-white text-center">Aawaz Hearing And Speech Care Center</div>
+          <div className="font-bold text-[20px] text-white text-center">Aawaj Hearing And Speech Care Center</div>
           {contactItems.map((item, index) => (
             <ContactItem key={index} icon={item.icon} link={item.link} label={item.label} />
           ))}
         </div>
       </div>
 
-      <div className='text-center py-3 font-semibold text-white bg-red-600'>&copy; 2024 Aawaz Hearing And Speech Care Center. All rights reserved.</div>
+      <div className='text-center py-3 font-semibold text-white bg-red-600'>&copy; 2024 Aawaj Hearing And Speech Care Center. All rights reserved.</div>
 
       {/* Inline CSS for custom animations */}
       <style>{`
