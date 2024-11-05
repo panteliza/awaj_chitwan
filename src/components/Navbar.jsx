@@ -72,11 +72,11 @@ const Navbar = () => {
           <div className="flex justify-end pr-4 py-3">
             <MdOutlineClose className="text-[30px]" onClick={showIt} />
           </div>
-          <div className="flex gap-2">
-            <div className="flex justify-center items-center w-[80px] pl-5px">
-              <img src={aawazLogo} alt="Aawaz Logo" className="h-[45px] w-[48px] rounded-full object-contain" />
-            </div>
-            <div className="font-semibold text-sm text-red-600">Aawaz Hearing And Speech Care Center</div>
+          <div className="flex   items-center justify-center">
+            
+              <img src={aawazLogo} alt="Aawaz Logo" className="h-[90px] w-[100px] rounded-full object-contain" />
+         
+          
           </div>
           <Link to='/'>
             <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Home</div>
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       {/* Logo in Medium Screens */}
       <div className="hidden md:block lg:hidden">
-        <img src={aawazLogo} alt="Aawaz Logo" className="h-[50px] w-[50px] rounded-full object-contain" />
+        <img src={aawazLogo} alt="Aawaz Logo" className="h-[52px] w-[60px] rounded-full object-contain" />
       </div>
 
       {/* Social Icons in Medium Screens */}
