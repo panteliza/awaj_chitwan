@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import aawazLogo from '../assets/aawaz.jpeg';
+import aawazLogo from '../assets/aawazmain.jpeg';
 import { BsFacebook, BsGoogle, BsWhatsapp,BsTelephoneFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn, MdHearing } from "react-icons/md";
@@ -73,11 +73,11 @@ const Footer = () => {
         }}
       >
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-5">
           <Link to="/">
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[63px] rounded-full" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[200px] rounded-full" />
           </Link>
-          <div className="font-semibold text-lg text-white text-center">Aawaz Hearing And Speech Care Center</div>
+          
           <div className='flex gap-2 text-white text-[25px]'>
             <a href="https://www.facebook.com/aawazhearing/" className="text-blue-800 hover:text-blue-600 ">
               <BsFacebook />

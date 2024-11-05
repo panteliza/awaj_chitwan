@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import { BsFacebook, BsGoogle,  BsWhatsapp } from 'react-icons/bs';
+import { BsFacebook, BsGoogle, BsWhatsapp } from 'react-icons/bs';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import aawazLogo from '../assets/aawaz.jpeg';
+import aawazLogo from '../assets/aawazmain.jpeg';
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -24,11 +24,12 @@ const Navbar = () => {
     <div className="flex items-center justify-between w-full gap-10 lg:px-[40px] pt-[6px] pb-[6px] px-[50px]">
       {/* Logo */}
       <Link to='/'>
-        <div className="transition-transform duration-200 transform hover:scale-125 cursor-pointer md:hidden lg:block">
+        <div className="transition-transform duration-200 transform hover:scale-125 cursor-pointer">
+          {/* Adjusted image sizes */}
           <img
             src={aawazLogo}
             alt="Aawaz Logo"
-            className="h-[49px] w-[70px] lg:h-[80px] lg:w-[140px] 2xl:h-[190px] 2xl:w-[200px] rounded-full"
+            className="h-[50px] w-[100px] md:h-[60px] md:w-[120px] lg:h-[80px] lg:w-[160px] xl:h-[100px] xl:w-[180px] 2xl:h-[120px] 2xl:w-[200px] object-contain"
           />
         </div>
       </Link>
@@ -73,44 +74,44 @@ const Navbar = () => {
           </div>
           <div className="flex gap-2">
             <div className="flex justify-center items-center w-[80px] pl-5px">
-              <img src={aawazLogo} alt="Aawaz Logo" className="h-[45px] w-[48px] rounded-full" />
+              <img src={aawazLogo} alt="Aawaz Logo" className="h-[45px] w-[48px] rounded-full object-contain" />
             </div>
             <div className="font-semibold text-sm text-red-600">Aawaz Hearing And Speech Care Center</div>
           </div>
           <Link to='/'>
-            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 ">Home</div>
+            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Home</div>
           </Link>
-{/* Services Dropdown */}
- {/* Services Dropdown */}
- <div
-  className={`border border-gray-200 relative flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 cursor-pointer`}
-  onClick={toggleDropdown}
->
-  <div>SERVICES</div>
-  <div className="text-[15px] font-bold 2xl:text-[30px]">
-    {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
-  </div>
-  {showDropdown && (
-    <div className="absolute top-[100%] translate-y-2 flex flex-col gap-3 pt-2 pb-4 bg-white shadow-md rounded">
-      <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
-      <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
-      <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
-    </div>
-  )}
-</div>
+
+          {/* Services Dropdown */}
+          <div
+            className={`border border-gray-200 relative flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 cursor-pointer`}
+            onClick={toggleDropdown}
+          >
+            <div>SERVICES</div>
+            <div className="text-[15px] font-bold 2xl:text-[30px]">
+              {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
+            </div>
+            {showDropdown && (
+              <div className="absolute top-[100%] translate-y-2 flex flex-col gap-3 pt-2 pb-4 bg-white shadow-md rounded">
+                <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
+                <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
+                <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
+              </div>
+            )}
+          </div>
 
           {/* Additional Links */}
           <Link to='/about'>
-            <div className="border border-gray-200 flex gap-2 text-red-600  items-center w-[250px] justify-center py-2">About</div>
+            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">About</div>
           </Link>
           <Link to='/contact'>
             <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Contact</div>
           </Link>
-          <div className='flex ml-[100px] gap-2 text-red-400 cursor-pointer text-[25px]'>
+          <div className="flex ml-[100px] gap-2 text-red-400 cursor-pointer text-[25px]">
             <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
               <BsFacebook className="hover:text-red-600" />
             </a>
-            <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic/@27.6931908,84.4122933,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3994fbc4ab160d6f:0x3fa4c00f10d335cb!2m2!1d84.4320284!2d27.6810354?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic" target="_blank" rel="noopener noreferrer">
               <BsGoogle className="hover:text-red-600" />
             </a>
             <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
@@ -121,13 +122,13 @@ const Navbar = () => {
       )}
 
       {/* Mobile Menu Icon */}
-      <div className='lg:hidden text-gray-500'>
-        <HiOutlineMenuAlt2 className='text-[40px]' onClick={showIt} />
+      <div className="lg:hidden text-gray-500">
+        <HiOutlineMenuAlt2 className="text-[40px]" onClick={showIt} />
       </div>
 
       {/* Logo in Medium Screens */}
       <div className="hidden md:block lg:hidden">
-        <img src={aawazLogo} alt="Aawaz Logo" className="h-[60px] w-[60px] rounded-full" />
+        <img src={aawazLogo} alt="Aawaz Logo" className="h-[50px] w-[50px] rounded-full object-contain" />
       </div>
 
       {/* Social Icons in Medium Screens */}
@@ -135,7 +136,7 @@ const Navbar = () => {
         <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
           <BsFacebook className="hover:text-red-600" />
         </a>
-        <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic/@27.6931908,84.4122933,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3994fbc4ab160d6f:0x3fa4c00f10d335cb!2m2!1d84.4320284!2d27.6810354?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic" target="_blank" rel="noopener noreferrer">
           <BsGoogle className="hover:text-red-600" />
         </a>
         <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
