@@ -60,13 +60,27 @@ const About = () => {
       </div>
 
       <div className="flex flex-col my-7 mx-4 sm:mx-0">
-        <div ref={headingRef} className="mx-5 opacity-0" style={{ animation: 'fadeIn 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
+        <div
+          ref={headingRef}
+          className="mx-5 opacity-0 fade-in-element"
+          style={{
+            animation: 'fadeIn 1.5s ease-in-out forwards',
+            animationPlayState: 'paused',
+          }}
+        >
           <h1 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-red-600 to-purple-700 text-center">
             WE UNDERSTAND WHAT YOU NEED
           </h1>
         </div>
         <div className="flex flex-col mt-7 sm:flex-row">
-          <div ref={swiperRef} className="w-full sm:w-1/2 opacity-0 transition-opacity duration-1000" style={{ animation: 'fadeInLeft 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
+          <div
+            ref={swiperRef}
+            className="w-full sm:w-1/2 opacity-0 fade-in-left"
+            style={{
+              animation: 'fadeInLeft 1.5s ease-in-out forwards',
+              animationPlayState: 'paused',
+            }}
+          >
             <Swiper
               autoplay={{
                 delay: 2500,
@@ -92,7 +106,14 @@ const About = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div ref={textRef} className="w-full sm:w-1/2 px-4 sm:px-10 text-justify opacity-0 transition-opacity duration-1000" style={{ animation: 'fadeInRight 1.5s ease-in-out forwards', animationPlayState: 'paused' }}>
+          <div
+            ref={textRef}
+            className="w-full sm:w-1/2 px-4 sm:px-10 text-justify opacity-0 fade-in-right"
+            style={{
+              animation: 'fadeInRight 1.5s ease-in-out forwards',
+              animationPlayState: 'paused',
+            }}
+          >
             <p className="text-base sm:text-lg">
               <strong>About Aawaz Hearing and Speech Care Center</strong>
               <br /><br />
@@ -124,6 +145,22 @@ const About = () => {
         @keyframes fadeInRight {
           0% { opacity: 0; transform: translateX(80px); }
           100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Media queries for responsive animation adjustments */
+        @media (max-width: 768px) {
+          .fade-in-element {
+            animation-duration: 1s; /* Shorter duration for faster effect */
+            transform: none; /* Adjust transform for smaller screens */
+          }
+          .fade-in-left {
+            animation-duration: 1.2s; /* Adjust duration */
+            transform: translateX(-40px); /* Reduced transform distance */
+          }
+          .fade-in-right {
+            animation-duration: 1.2s;
+            transform: translateX(40px); /* Reduced transform distance */
+          }
         }
       `}</style>
     </div>

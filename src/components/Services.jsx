@@ -10,7 +10,7 @@ const services = [
   {
     title: 'Hearing Tests',
     description:
-      'Discover the state of your hearing with our comprehensive hearing tests. At Nepal Hearing & Speech Clinic, we offer precise assessments using advanced tools to help you take the first step towards better hearing health.',
+      'Discover the state of your hearing with our comprehensive hearing tests. At Aawaz, we offer precise assessments using advanced tools to help you take the first step towards better hearing health.',
     imgSrc: invisibleinthecanal,
     link: '/hearing-tests', // Link for this service
   },

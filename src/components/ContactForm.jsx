@@ -14,9 +14,8 @@ const Contact = () => {
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log('Element in view:', entry.target);
           entry.target.style.animationPlayState = 'running';
-          entry.target.style.opacity = '1'; // Ensure it's visible
+          entry.target.style.opacity = '1'; // Ensure the element is visible
         } else {
           entry.target.style.animationPlayState = 'paused';
         }
@@ -38,7 +37,7 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-10 bg-gray-100">
-      <h2 className="font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-[#ee4c4c]  mb-8">
+      <h2 className="font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-[#ee4c4c] mb-8">
         Contact Us
       </h2>
 
@@ -48,12 +47,12 @@ const Contact = () => {
           ref={locationRef}
           className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg transform opacity-0 transition-opacity duration-700"
           style={{
-            animation: 'fadeInLeft 1s ease-out forwards',
+            animation: 'fadeInLeft 1.2s ease-out forwards',
             animationPlayState: 'paused',
           }}
         >
           <FaMapMarkerAlt className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
-          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800   mb-2">
+          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Our Location
           </h3>
           <p className="text-center text-gray-700">Bharatpur-10, Hospital Road Chitwan</p>
@@ -64,12 +63,12 @@ const Contact = () => {
           ref={contactRef}
           className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg transform opacity-0 transition-opacity duration-700"
           style={{
-            animation: 'fadeInBottom 1s ease-out forwards',
+            animation: 'fadeInBottom 1.2s ease-out forwards',
             animationPlayState: 'paused',
           }}
         >
           <FaPhoneAlt className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
-          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800   mb-2">
+          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Our Contact
           </h3>
           <p className="text-center text-gray-700">+977 9845192771</p>
@@ -80,12 +79,12 @@ const Contact = () => {
           ref={mailRef}
           className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg transform opacity-0 transition-opacity duration-700"
           style={{
-            animation: 'fadeInRight 1s ease-out forwards',
+            animation: 'fadeInRight 1.2s ease-out forwards',
             animationPlayState: 'paused',
           }}
         >
           <FaEnvelope className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
-          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800  mb-2">
+          <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Mail Us
           </h3>
           <p className="text-center text-gray-700">aawazclinic42@gmail.com</p>
@@ -95,16 +94,23 @@ const Contact = () => {
       {/* Inline CSS for custom animations */}
       <style>{`
         @keyframes fadeInLeft {
-          0% { opacity: 0; transform: translateX(-50px); }
+          0% { opacity: 0; transform: translateX(-60px); }
           100% { opacity: 1; transform: translateX(0); }
         }
         @keyframes fadeInRight {
-          0% { opacity: 0; transform: translateX(50px); }
+          0% { opacity: 0; transform: translateX(60px); }
           100% { opacity: 1; transform: translateX(0); }
         }
         @keyframes fadeInBottom {
-          0% { opacity: 0; transform: translateY(50px); }
+          0% { opacity: 0; transform: translateY(60px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media queries for responsive adjustments */
+        @media (max-width: 768px) {
+          .transform {
+            animation-duration: 0.8s; /* Faster animations on smaller screens */
+          }
         }
       `}</style>
     </div>
