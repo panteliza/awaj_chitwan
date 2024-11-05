@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; 
-import behinstheear from '../assets/behindtheear.jpeg'; 
+import { Link } from 'react-router-dom';
+import behinstheear from '../assets/behindtheear.jpeg';
 import completelyincanal from '../assets/completelyincanal.jpeg';
 import invisibleinthecanal from '../assets/invisibleinthecanal.jpeg';
 import intheear from '../assets/intheear.jpeg';
@@ -68,6 +68,7 @@ export default function App() {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
             to={product.link}
+            animationIndex={index}
           />
         ))}
       </div>
@@ -82,17 +83,34 @@ export default function App() {
           0% { opacity: 0; transform: translateX(80px); }
           100% { opacity: 1; transform: translateX(0); }
         }
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(80px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+          0% { opacity: 0; transform: translateY(-80px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
     </div>
   );
 }
 
-const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, onMouseLeave, to }, ref) => {
+const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, onMouseLeave, to, animationIndex }, ref) => {
   const scale = isHovered ? 1 : 0.9;
   const zIndex = isHovered ? 1 : 'auto';
 
-  // Alternate animations between left and right for each product card
-  const animation = ref?.current?.dataset?.index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight';
+  // Choose animation based on the index
+  let animation;
+  if (animationIndex % 4 === 0) {
+    animation = 'fadeInLeft';
+  } else if (animationIndex % 4 === 1) {
+    animation = 'fadeInRight';
+  } else if (animationIndex % 4 === 2) {
+    animation = 'fadeInUp';
+  } else {
+    animation = 'fadeInDown';
+  }
 
   return (
     <Link to={to} className="no-underline">
