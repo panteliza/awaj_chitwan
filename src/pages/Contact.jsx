@@ -12,7 +12,10 @@ const Contact = () => {
   const textRef = useRef(null);
   const mapRef = useRef(null);
 
+  // Scroll to top on component mount
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when Contact page is loaded
+
     const observerOptions = {
       threshold: 0.1, // Trigger animation when 10% of the element is in view
     };
@@ -71,7 +74,6 @@ const Contact = () => {
               src={aawazlocation}
               alt="Map"
               className="mx-auto max-w-full h-auto"
-             
             />
           </a>
         </div>

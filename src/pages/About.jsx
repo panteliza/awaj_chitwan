@@ -18,7 +18,10 @@ const About = () => {
   const swiperRef = useRef(null);
   const textRef = useRef(null);
 
+  // Scroll to top on component mount
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page when About page is loaded
+
     const observerOptions = {
       threshold: 0.3, // Trigger animation when 30% of the element is in view
     };

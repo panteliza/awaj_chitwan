@@ -1,9 +1,7 @@
-// src/components/Services.js
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import invisibleinthecanal from '../assets/ab.jpg';
@@ -13,7 +11,6 @@ import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
 
-// Services array with image imports
 const services = [
   {
     title: 'Hearing Tests',
@@ -55,21 +52,44 @@ const services = [
 
 const Services = () => {
   const navigate = useNavigate();
+  const serviceRefs = useRef([]);
 
   const handleCardClick = (link) => {
     navigate(link);
   };
 
+  // Intersection Observer for triggering animations on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fadeInUp'); // Add animation class when in view
+        }
+      });
+    }, { threshold: 0.3 });
+
+    // Observe each service card
+    serviceRefs.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+
+    return () => {
+      serviceRefs.current.forEach((ref) => {
+        observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-center sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-600 mb-8">
+        <h2 className="font-bold text-center text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] text-red-600 mb-8">
           Our Services
         </h2>
 
         <Swiper
           modules={[Autoplay, Pagination]}
-          spaceBetween={30}
+          spaceBetween={15}
           slidesPerView={1}
           autoplay={{
             delay: 2500,
@@ -87,25 +107,52 @@ const Services = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <div
-                className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
+                ref={(el) => serviceRefs.current[index] = el} // Store references for each service card
+                className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform opacity-0"
                 onClick={() => handleCardClick(service.link)}
               >
                 <img
                   src={service.imgSrc}
                   alt={service.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-red-700">
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                    {service.description}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+
+      {/* Inline CSS for custom animations */}
+      <style>{`
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Apply fadeInUp animation */
+        .fadeInUp {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .swiper-container {
+            padding-bottom: 20px; /* Additional space for smaller screens */
+          }
+          .swiper-slide {
+            display: block; /* Stack each service in the swiper on small screens */
+            margin-bottom: 15px; /* Add margin between services */
+          }
+        }
+      `}</style>
     </section>
   );
 };
