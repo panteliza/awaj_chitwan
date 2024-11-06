@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -52,33 +52,10 @@ const services = [
 
 const Services = () => {
   const navigate = useNavigate();
-  const serviceRefs = useRef([]);
 
   const handleCardClick = (link) => {
     navigate(link);
   };
-
-  // Intersection Observer for triggering animations on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fadeInUp'); // Add animation class when in view
-        }
-      });
-    }, { threshold: 0.3 });
-
-    // Observe each service card
-    serviceRefs.current.forEach((ref) => {
-      observer.observe(ref);
-    });
-
-    return () => {
-      serviceRefs.current.forEach((ref) => {
-        observer.unobserve(ref);
-      });
-    };
-  }, []);
 
   return (
     <section className="py-8 bg-gray-50">
@@ -107,9 +84,13 @@ const Services = () => {
           {services.map((service, index) => (
             <SwiperSlide key={index}>
               <div
-                ref={(el) => serviceRefs.current[index] = el} // Store references for each service card
-                className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform opacity-0"
+                className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => handleCardClick(service.link)}
+                style={{
+                  animation: 'fadeInUp 1s ease-out forwards',
+                  opacity: '0',
+                  animationPlayState: 'paused',
+                }}
               >
                 <img
                   src={service.imgSrc}
@@ -135,11 +116,6 @@ const Services = () => {
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Apply fadeInUp animation */
-        .fadeInUp {
-          animation: fadeInUp 1s ease-out forwards;
         }
 
         /* Responsive adjustments */
