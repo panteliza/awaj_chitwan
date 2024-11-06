@@ -17,13 +17,13 @@ const OAE = () => {
       <div className="flex flex-col items-center p-4 space-y-8">
         {/* Page Header */}
         <h1 className="text-3xl font-bold text-center text-blue-600 mt-8 fadeIn">
-          Otoacoustic Emissions (OAE)
+          Otoacostic Emissions (OAE)
         </h1>
 
         {/* Description Section */}
         <div className="max-w-3xl text-center text-gray-700 slideIn">
           <p className="text-lg">
-            Otoacoustic Emissions (OAE) testing is a crucial tool used at Aawaj Hearing and Speech Center to evaluate the function of the inner ear, specifically the cochlea. This non-invasive test helps detect hearing loss in individuals of all ages, including newborns and young children who may not be able to communicate their hearing difficulties.
+            Otoacostic Emissions (OAE) testing is a crucial tool used at Aawaj Hearing and Speech Center to evaluate the function of the inner ear, specifically the cochlea. This non-invasive test helps detect hearing loss in individuals of all ages, including newborns and young children who may not be able to communicate their hearing difficulties.
           </p>
           <br />
           <p className="text-lg">
