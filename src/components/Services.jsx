@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
+
+// Images
 import invisibleinthecanal from '../assets/ab.jpg';
 import intheear from '../assets/cd.jpg';
 import receiverincanal from '../assets/ef.jpg';
@@ -11,6 +13,7 @@ import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
 
+// Services Data
 const services = [
   {
     title: 'Hearing Tests',
@@ -86,11 +89,6 @@ const Services = () => {
               <div
                 className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => handleCardClick(service.link)}
-                style={{
-                  animation: 'fadeInUp 1s ease-out forwards',
-                  opacity: '0',
-                  animationPlayState: 'paused',
-                }}
               >
                 <img
                   src={service.imgSrc}
@@ -113,6 +111,7 @@ const Services = () => {
 
       {/* Inline CSS for custom animations */}
       <style>{`
+        /* Fade-in animation */
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
@@ -121,7 +120,7 @@ const Services = () => {
         /* Responsive adjustments */
         @media (max-width: 768px) {
           .swiper-container {
-            padding-bottom: 20px; /* Additional space for smaller screens */
+            padding-bottom: 20px; /* Additional space for pagination on smaller screens */
           }
           .swiper-slide {
             display: block; /* Stack each service in the swiper on small screens */
