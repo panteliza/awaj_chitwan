@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -55,6 +55,17 @@ const services = [
 
 const Services = () => {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check for mobile screen size
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleCardClick = (link) => {
     navigate(link);
@@ -67,28 +78,19 @@ const Services = () => {
           Our Services
         </h2>
 
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          spaceBetween={15}
-          slidesPerView={1}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          loop={true}
-          pagination={{ clickable: true }}
-          className="swiper-container"
-        >
-          {services.map((service, index) => (
-            <SwiperSlide key={index}>
+        {isMobile ? (
+          // Stacked layout for mobile screens
+          <div className="space-y-4">
+            {services.map((service, index) => (
               <div
+                key={index}
                 className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => handleCardClick(service.link)}
+                style={{
+                  animation: 'fadeInUp 1s ease-out forwards',
+                  opacity: '0',
+                  animationPlayState: 'paused',
+                }}
               >
                 <img
                   src={service.imgSrc}
@@ -104,9 +106,51 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </div>
+        ) : (
+          // Swiper slider for larger screens
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={15}
+            slidesPerView={1}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            loop={true}
+            pagination={{ clickable: true }}
+            className="swiper-container"
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+                  onClick={() => handleCardClick(service.link)}
+                >
+                  <img
+                    src={service.imgSrc}
+                    alt={service.title}
+                    className="w-full h-40 sm:h-48 md:h-56 object-cover"
+                  />
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
 
       {/* Inline CSS for custom animations */}
@@ -115,17 +159,6 @@ const Services = () => {
         @keyframes fadeInUp {
           0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-          .swiper-container {
-            padding-bottom: 20px; /* Additional space for pagination on smaller screens */
-          }
-          .swiper-slide {
-            display: block; /* Stack each service in the swiper on small screens */
-            margin-bottom: 15px; /* Add margin between services */
-          }
         }
       `}</style>
     </section>
