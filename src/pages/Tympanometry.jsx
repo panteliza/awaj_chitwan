@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ptaTest1 from "../assets/ptatest2.jpg"; // Update with actual image file paths if different
-import ptaTest2 from "../assets/ptatest.jpg";
+import tympTest1 from "../assets/tymp.png"; // Update with actual image paths
+import tympTest2 from "../assets/a.jpg";
 
-const PTATest = () => {
+const TympanometryTest = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -12,26 +12,30 @@ const PTATest = () => {
       <div className="flex flex-col items-center p-4 space-y-8">
         {/* Page Header */}
         <h1 className="text-3xl font-bold text-center text-blue-600 mt-8 fadeIn">
-          PTA Test (Diagnostic Audiometer)
+          Tympanometry & Stapedius Reflex Test
         </h1>
 
         {/* Description Section */}
         <div className="max-w-3xl text-center text-gray-700 slideIn">
           <p className="text-lg">
-            The Pure Tone Audiometry (PTA) test is a key diagnostic tool used at Aawaz Hearing and Speech Center to assess hearing sensitivity. This test helps us determine the softest sounds you can hear at various pitches. Our experienced audiologists use advanced diagnostic audiometers to ensure accurate results, which guide us in crafting personalized treatment plans to meet your auditory needs.
+            Tympanometry and Stapedius Reflex testing are essential diagnostic tools used at Aawaj Hearing and Speech Center to assess middle ear function. Tympanometry measures the movement of the eardrum in response to changes in air pressure, while the Stapedius Reflex Test evaluates the reflexes of the middle ear muscles. These tests help in diagnosing various middle ear conditions and provide a comprehensive understanding of auditory health.
+          </p>
+          <br />
+          <p className="text-lg">
+            Our audiologists use state-of-the-art equipment to conduct these tests, ensuring precise results that aid in tailoring the best treatment options for our patients. The testing is non-invasive, quick, and suitable for all age groups.
           </p>
         </div>
 
         {/* Images Section */}
         <div className="flex flex-col sm:flex-row items-center gap-6 slideIn">
           <img
-            src={ptaTest1}
-            alt="Diagnostic Audiometer"
+            src={tympTest1}
+            alt="Tympanometry Equipment"
             className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
           <img
-            src={ptaTest2}
-            alt="Audiologist Performing PTA Test"
+            src={tympTest2}
+            alt="Audiologist Performing Tympanometry Test"
             className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </div>
@@ -39,7 +43,7 @@ const PTATest = () => {
 
       <Footer />
 
-      {/* Inline CSS for Stronger Animations */}
+      {/* Inline CSS for Animations */}
       <style>{`
         @keyframes fadeIn {
           0% { opacity: 0; transform: translateY(60px); }
@@ -63,4 +67,4 @@ const PTATest = () => {
   );
 };
 
-export default PTATest;
+export default TympanometryTest;

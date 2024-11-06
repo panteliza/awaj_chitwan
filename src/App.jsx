@@ -15,6 +15,8 @@ import InTheEar from './pages/InTheEar';
 import InvisibleInTheCanal from './pages/InvisibleInTheCanal';
 import CompletelyInCanal from './pages/CompletelyInCanal';
 import OAE from './pages/OAE';
+import PTATest from './pages/PTATest';
+import TympanometryTest from './pages/Tympanometry';
 
 
 
@@ -30,6 +32,8 @@ const App = () => {
           
           <Route path="/contact" element={<Contact />} />
           <Route path="/hearing-tests" element={<HearingTest />} />
+          <Route path="/pta-test" element={<PTATest />} />
+          <Route path="/tympanometry-stapedius" element={<TympanometryTest/>} />
           <Route path="/behind-the-ear" element={<BehindTheEar/>} />
           <Route path="/in-the-ear" element={<InTheEar/>} />
           <Route path="/completely-in-canal" element={<CompletelyInCanal/>} />

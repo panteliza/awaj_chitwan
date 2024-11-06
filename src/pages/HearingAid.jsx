@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import hearingAidTrial1 from "../assets/e.jpg";
-import hearingAidTrial2 from "../assets/g.jpg";
+import hearingAidTrial1 from "../assets/hearingaid.png";
+import hearingAidTrial2 from "../assets/digital-hearing-aids.jpg";
 
 const HearingAidTrialsAndFittings = () => {
   // Scroll to the top when the component mounts
