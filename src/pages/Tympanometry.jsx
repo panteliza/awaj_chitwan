@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import tympTest1 from "../assets/tymp.png"; // Update with actual image paths
 import tympTest2 from "../assets/a.jpg";
 
 const TympanometryTest = () => {
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -31,12 +36,12 @@ const TympanometryTest = () => {
           <img
             src={tympTest1}
             alt="Tympanometry Equipment"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
           <img
             src={tympTest2}
             alt="Audiologist Performing Tympanometry Test"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </div>
       </div>

@@ -36,12 +36,12 @@ const SpeechLanguageTherapy = () => {
           <img
             src={therapyImage1}
             alt="Speech Therapy Session"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
           <img
             src={therapyImage2}
             alt="Therapist with Client"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
         </div>
       </div>

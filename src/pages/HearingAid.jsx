@@ -36,12 +36,12 @@ const HearingAidTrialsAndFittings = () => {
           <img
             src={hearingAidTrial1}
             alt="Hearing Aid Fitting"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
           <img
             src={hearingAidTrial2}
             alt="Patient Trying Hearing Aids"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
         </div>
       </div>

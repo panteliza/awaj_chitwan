@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ptaTest1 from "../assets/ptatest2.jpg"; // Update with actual image file paths if different
 import ptaTest2 from "../assets/ptatest.jpg";
 
 const PTATest = () => {
+  // Scroll to the top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -18,7 +23,7 @@ const PTATest = () => {
         {/* Description Section */}
         <div className="max-w-3xl text-center text-gray-700 slideIn">
           <p className="text-lg">
-            The Pure Tone Audiometry (PTA) test is a key diagnostic tool used at Aawaz Hearing and Speech Center to assess hearing sensitivity. This test helps us determine the softest sounds you can hear at various pitches. Our experienced audiologists use advanced diagnostic audiometers to ensure accurate results, which guide us in crafting personalized treatment plans to meet your auditory needs.
+            The Pure Tone Audiometry (PTA) test is a key diagnostic tool used at Aawaj Hearing and Speech Center to assess hearing sensitivity. This test helps us determine the softest sounds you can hear at various pitches. Our experienced audiologists use advanced diagnostic audiometers to ensure accurate results, which guide us in crafting personalized treatment plans to meet your auditory needs.
           </p>
         </div>
 
@@ -27,12 +32,12 @@ const PTATest = () => {
           <img
             src={ptaTest1}
             alt="Diagnostic Audiometer"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
           <img
             src={ptaTest2}
             alt="Audiologist Performing PTA Test"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </div>
       </div>

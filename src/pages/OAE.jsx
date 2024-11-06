@@ -36,12 +36,12 @@ const OAE = () => {
           <img
             src={oaeImage1}
             alt="OAE Testing Equipment"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
           <img
             src={oaeImage2}
             alt="Audiologist Performing OAE Test"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
         </div>
       </div>

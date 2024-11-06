@@ -1,71 +1,110 @@
 // src/components/Services.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
 import invisibleinthecanal from '../assets/ab.jpg';
 import intheear from '../assets/cd.jpg';
 import receiverincanal from '../assets/ef.jpg';
+import ptaTest from '../assets/ptatest.jpg';
+import tympanometry from '../assets/tymp.png';
+import otoacoustic from '../assets/oae.png';
 
 // Services array with image imports
 const services = [
   {
     title: 'Hearing Tests',
-    description:
-      'Discover the state of your hearing with our comprehensive hearing tests. At Aawaj, we offer precise assessments using advanced tools to help you take the first step towards better hearing health.',
+    description: 'Comprehensive hearing tests to assess your hearing health.',
     imgSrc: invisibleinthecanal,
-    link: '/hearing-tests', // Link for this service
+    link: '/hearing-tests',
   },
   {
     title: 'Speech And Language Therapy',
-    description:
-      'Enhance communication skills with our personalized Speech and Language Therapy. At Aawaj, we provide expert care for children and adults to overcome speech, language, and communication challenges for a better quality of life.',
+    description: 'Personalized care for speech, language, and communication needs.',
     imgSrc: intheear,
-    link: '/speech-and-language-therapy', // Link for this service
+    link: '/speech-and-language-therapy',
   },
   {
     title: 'Hearing Aid Trial And Fittings',
-    description:
-      'Experience the perfect fit with our Hearing Aid Trial and Fitting services. At Aawaj, we offer personalized solutions to match your hearing needs, ensuring comfort, clarity, and improved hearing in every setting.',
+    description: 'Get the perfect fit and improved hearing with our aid trial.',
     imgSrc: receiverincanal,
-    link: '/hearing-aid-trial-and-fittings', // Link for this service
+    link: '/hearing-aid-trial-and-fittings',
+  },
+  {
+    title: 'PTA Test (Diagnostic Audiometer)',
+    description: 'Measure hearing thresholds for hearing loss assessment.',
+    imgSrc: ptaTest,
+    link: '/pta-test',
+  },
+  {
+    title: 'Tympanometry & Stapedius Reflex Test',
+    description: 'Assess middle ear function for better diagnosis.',
+    imgSrc: tympanometry,
+    link: '/tympanometry-stapedius',
+  },
+  {
+    title: 'Otoacoustic Emissions (OAE)',
+    description: 'Identify cochlear function, vital for newborn hearing tests.',
+    imgSrc: otoacoustic,
+    link: '/otoacostic-emission',
   },
 ];
 
 const Services = () => {
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   const handleCardClick = (link) => {
-    navigate(link); // Navigate to the specified link
+    navigate(link);
   };
 
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* Custom Heading */}
         <h2 className="font-bold text-center sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-600 mb-8">
           Our Services
         </h2>
 
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          loop={true}
+          pagination={{ clickable: true }}
+          className="swiper-container"
+        >
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
-              onClick={() => handleCardClick(service.link)} // Handle card click
-            >
-              <img
-                src={service.imgSrc}
-                alt={service.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-red-700">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">{service.description}</p>
+            <SwiperSlide key={index}>
+              <div
+                className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
+                onClick={() => handleCardClick(service.link)}
+              >
+                <img
+                  src={service.imgSrc}
+                  alt={service.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-red-700">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600">{service.description}</p>
+                </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

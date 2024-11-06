@@ -32,12 +32,12 @@ const HearingTest = () => {
           <img
             src={hearingTest1}
             alt="Hearing Test Equipment"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
           <img
             src={hearingTest2}
             alt="Audiologist with Patient"
-            className="w-full sm:w-1/2 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
           />
         </div>
       </div>
