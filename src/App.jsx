@@ -14,6 +14,7 @@ import BehindTheEar from './pages/BehindTheEar';
 import InTheEar from './pages/InTheEar';
 import InvisibleInTheCanal from './pages/InvisibleInTheCanal';
 import CompletelyInCanal from './pages/CompletelyInCanal';
+import OAE from './pages/OAE';
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/receiver-in-canal" element={<ReceiverInCanal />} />
           <Route path="/invisible-in-the-canal" element={<InvisibleInTheCanal />} />
           <Route path="/hearing-aid-trial-and-fittings" element={<HearingAidTrialsAndFittings />} />
+          <Route path="/otoacostic-emission" element={<OAE />} />
           <Route path="/speech-and-language-therapy" element={<SpeechLanguageTherapy />} />
          
 
