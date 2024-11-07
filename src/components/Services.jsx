@@ -58,7 +58,6 @@ const Services = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check for mobile screen size
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -89,7 +88,6 @@ const Services = () => {
                 style={{
                   animation: 'fadeInUp 1s ease-out forwards',
                   opacity: '0',
-                  animationPlayState: 'paused',
                 }}
               >
                 <img
