@@ -11,30 +11,30 @@ import Contact from '../components/ContactForm';
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center bg-gray-50">
+    <div className="w-full min-h-screen flex flex-col items-center bg-gray-50 overflow-hidden">
       <Navbar />
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <Slider />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <DoctorInfo />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <Main1 />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <Services />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <Mission />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <TestimonialPage />
       </div>
-      <div className="w-full">
+      <div className="w-full flex-shrink-0">
         <Contact />
       </div>
-      <Footer />
+      <Footer className="w-full" />
     </div>
   );
 };
