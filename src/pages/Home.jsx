@@ -9,22 +9,34 @@ import Main1 from '../components/Main1';
 import Services from '../components/Services';
 import Contact from '../components/ContactForm';
 
-
-
 const Home = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
-      {/* Adding 'flex flex-col items-center' to center items and stack them vertically */}
+    <div className="w-full min-h-screen flex flex-col items-center bg-gray-50">
       <Navbar />
-      <Slider />
-      <DoctorInfo />
-      <Main1 />
-      <Services />
-      <Mission />
-      <TestimonialPage />
-      <Contact />
+      <div className="w-full">
+        <Slider />
+      </div>
+      <div className="w-full">
+        <DoctorInfo />
+      </div>
+      <div className="w-full">
+        <Main1 />
+      </div>
+      <div className="w-full">
+        <Services />
+      </div>
+      <div className="w-full">
+        <Mission />
+      </div>
+      <div className="w-full">
+        <TestimonialPage />
+      </div>
+      <div className="w-full">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
 };
+
 export default Home;
