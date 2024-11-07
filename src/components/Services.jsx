@@ -86,7 +86,8 @@ const Services = () => {
                 className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
                 onClick={() => handleCardClick(service.link)}
                 style={{
-                  animation: 'fadeInUp 1s ease-out forwards',
+                  animation: `fadeInUp 1s ease-out forwards`,
+                  animationDelay: `${index * 0.15}s`, // Delay each card
                   opacity: '0',
                 }}
               >
