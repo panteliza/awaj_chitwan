@@ -12,6 +12,7 @@ import receiverincanal from '../assets/ef.jpg';
 import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
+import tinnitus from '../assets/tinnitus2.jpg'
 
 // Services Data
 const services = [
@@ -44,6 +45,12 @@ const services = [
     description: 'Assess middle ear function for better diagnosis.',
     imgSrc: tympanometry,
     link: '/tympanometry-stapedius',
+  },
+  {
+    title: 'Tinnitus Retraining Therapy (TRT)',
+    description: 'Provide therapeutic support to manage tinnitus perception.',
+    imgSrc: tinnitus,
+    link: '/tinnitus-retraining-therapy',
   },
   {
     title: 'Otoacoustic Emissions (OAE)',

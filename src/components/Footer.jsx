@@ -19,6 +19,7 @@ const Footer = () => {
     { icon: <MdHearing className='text-white' />, link: "/hearing-tests", label: "Hearing Tests And Assessments" },
     { icon: <MdHearing className='text-white' />, link: "/speech-and-language-therapy", label: "Speech And Language Therapy" },
     { icon: <MdHearing className='text-white' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" },
+    { icon: <MdHearing className='text-white' />, link: "/tinnitus-retraining-therapy", label: "Tinnitus Retraining Therapy" },
     { icon: <MdHearing className='text-white' />, link: "/otoacostic-emission", label: "OAE(Otoacostic emission)" },
   ];
 

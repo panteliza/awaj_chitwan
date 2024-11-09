@@ -48,7 +48,7 @@ const Navbar = () => {
             {showDropdown ? <AiOutlineUp /> : <AiOutlineDown />}
           </div>
           {showDropdown && (
-            <div className="absolute top-12 2xl:top-20 text-[15px] 2xl:text-[30px] bg-white pl-3 2xl:pl-5 gap-7 z-[1] rounded shadow w-[160px] 2xl:w-[280px]">
+            <div className="absolute top-12 2xl:top-20 text-[15px] 2xl:text-[30px] bg-white pl-3 2xl:pl-5 gap-7 z-[1] rounded shadow w-[230px] 2xl:w-[280px]">
               <div className="flex flex-col gap-3 pt-2 pb-4">
               <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/pta-test')}>PTA Test (Diagnostic Audiometer)
               </div>
@@ -56,6 +56,7 @@ const Navbar = () => {
               </div>
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
+                <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/tinnitus-retraining-therapy')}>Tinnitus Retraining Therapy</div>
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/otoacostic-emission')}>OAE(Otoacostic emission)
                 </div>
@@ -104,6 +105,7 @@ const Navbar = () => {
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-tests')}>Hearing Tests</div>
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/speech-and-language-therapy')}>Speech And Language Therapy</div>
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
+                <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/tinnitus-retraining-therapy')}>Tinnitus Retraining Therapy</div>
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/otoacostic-emission')}>OAE (Otoacostic emission)</div>
               </div>
             )}
