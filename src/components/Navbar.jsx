@@ -60,6 +60,8 @@ const Navbar = () => {
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
                 <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/otoacostic-emission')}>OAE(Otoacostic emission)
                 </div>
+                <div className="hover:text-[#ec7676]" onClick={() => handleNavigation('/auditory-brainstem-response')}> Auditory Brainstem Response
+                </div>
                
               </div>
             </div>
@@ -107,6 +109,7 @@ const Navbar = () => {
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/hearing-aid-trial-and-fittings')}>Hearing Aid Trial and Fittings</div>
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/tinnitus-retraining-therapy')}>Tinnitus Retraining Therapy</div>
                 <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/otoacostic-emission')}>OAE (Otoacostic emission)</div>
+                <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2" onClick={() => handleNavigation('/auditory-brainstem-response')}>Auditory Brainstem Response</div>
               </div>
             )}
           </div>

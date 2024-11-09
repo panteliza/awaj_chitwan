@@ -18,6 +18,7 @@ import OAE from './pages/OAE';
 import PTATest from './pages/PTATest';
 import TympanometryTest from './pages/Tympanometry';
 import TinnitusRetrainingTherapy from './pages/Tinnitus';
+import ABRTest from './pages/auditory';
 
 
 
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/tinnitus-retraining-therapy" element={<TinnitusRetrainingTherapy />} />
           <Route path="/otoacostic-emission" element={<OAE />} />
           <Route path="/speech-and-language-therapy" element={<SpeechLanguageTherapy />} />
+          <Route path="/auditory-brainstem-response" element={<ABRTest />} />
          
 
               

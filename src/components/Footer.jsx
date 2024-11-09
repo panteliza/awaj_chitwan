@@ -21,6 +21,7 @@ const Footer = () => {
     { icon: <MdHearing className='text-white' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" },
     { icon: <MdHearing className='text-white' />, link: "/tinnitus-retraining-therapy", label: "Tinnitus Retraining Therapy" },
     { icon: <MdHearing className='text-white' />, link: "/otoacostic-emission", label: "OAE(Otoacostic emission)" },
+    { icon: <MdHearing className='text-white' />, link: "/auditory-brainstem-response", label: "Auditory Brainstem Response" },
   ];
 
   const contactItems = [

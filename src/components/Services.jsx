@@ -13,6 +13,7 @@ import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
 import tinnitus from '../assets/tinnitus2.jpg'
+import arb from '../assets/ABR.jpg'
 
 // Services Data
 const services = [
@@ -57,6 +58,12 @@ const services = [
     description: 'Identify cochlear function, vital for newborn hearing tests.',
     imgSrc: otoacoustic,
     link: '/otoacostic-emission',
+  },
+  {
+    title: 'Auditory-brainstem-response',
+    description: 'Assess auditory nerve and brainstem function for hearing and neurological diagnosis.',
+    imgSrc: arb,
+    link: '/auditory-brainstem-response',
   },
 ];
 
