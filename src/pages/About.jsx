@@ -51,7 +51,7 @@ const About = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full flex-shrink-0">
       <Navbar />
 
       <div>
