@@ -73,13 +73,13 @@ const Footer = () => {
           </Link>
           
           <div className='flex gap-2 text-white text-[25px]'>
-            <a href="https://www.facebook.com/aawazhearing/" className="text-blue-900 hover:text-blue-500 transition-transform duration-500 transform hover:scale-110">
+            <a href="https://www.facebook.com/aawazhearing/" className="text-blue-500 hover:text-blue-900 transition-transform duration-500 transform hover:scale-110">
               <BsFacebook />
             </a>
-            <a href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200" className="text-yellow-900 hover:text-yellow-500 transition-transform duration-500 transform hover:scale-110">
+            <a href="https://www.google.com/maps/dir//Hospital+Rd+10,+Bharatpur+44200" className="text-yellow-500 hover:text-yellow-900 transition-transform duration-500 transform hover:scale-110">
               <BsGoogle />
             </a>
-            <a href="https://wa.me/9779845192771" className="text-green-900 hover:text-green-500 transition-transform duration-500 transform hover:scale-110">
+            <a href="https://wa.me/9779845192771" className="text-green-500 hover:text-green-900 transition-transform duration-500 transform hover:scale-110">
               <BsWhatsapp />
             </a>
           </div>
