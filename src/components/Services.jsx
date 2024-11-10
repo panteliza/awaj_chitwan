@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -30,7 +30,6 @@ const services = [
 const Services = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
-  const [visibleCards, setVisibleCards] = useState(new Set());
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,24 +40,26 @@ const Services = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Handle Scroll and IntersectionObserver to trigger animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleCards((prevVisibleCards) => new Set(prevVisibleCards).add(entry.target));
-            observer.unobserve(entry.target);
+            entry.target.classList.add('visible'); // Add class when the element is in view
+            observer.unobserve(entry.target); // Stop observing once the card is visible
           }
         });
       },
-      { threshold: 0.2 } // Adjust threshold as needed
+      { threshold: 0.2 } // Trigger when 20% of the element is visible
     );
 
+    // Select all service cards for observing
     const cardElements = document.querySelectorAll('.service-card');
     cardElements.forEach((el) => observer.observe(el));
 
     return () => {
-      cardElements.forEach((el) => observer.unobserve(el));
+      cardElements.forEach((el) => observer.unobserve(el)); // Cleanup observer
     };
   }, []);
 
@@ -78,12 +79,10 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 ${visibleCards.has(document.querySelectorAll('.service-card')[index]) ? '' : 'opacity-0'}`}
+                className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
                 onClick={() => handleCardClick(service.link)}
                 style={{
-                  animation: visibleCards.has(document.querySelectorAll('.service-card')[index])
-                    ? `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`
-                    : 'none',
+                  animation: `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`,
                   animationDelay: `${index * 0.15}s`,
                 }}
               >
@@ -124,7 +123,7 @@ const Services = () => {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
                   onClick={() => handleCardClick(service.link)}
                 >
                   <img
@@ -158,6 +157,12 @@ const Services = () => {
         @keyframes slideInRight {
           0% { opacity: 0; transform: translateX(40px); }
           100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* When the card is visible, apply the animation */
+        .service-card.visible {
+          opacity: 1;
+          animation: var(--slideIn) 1s ease-out forwards;
         }
       `}</style>
     </section>
