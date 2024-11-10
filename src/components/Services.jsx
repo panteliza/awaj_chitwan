@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -30,6 +30,7 @@ const services = [
 const Services = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
+  const cardsRef = useRef([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,6 +40,28 @@ const Services = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // Stop observing once in view
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      cardsRef.current.forEach((card) => observer.unobserve(card));
+    };
+  }, [cardsRef]);
 
   const handleCardClick = (link) => {
     navigate(link);
@@ -52,17 +75,17 @@ const Services = () => {
         </h2>
 
         {isMobile ? (
-          // Stacked layout for mobile screens with alternating animations
+          // Stacked layout for mobile screens with alternating animations on scroll
           <div className="space-y-4">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
+                ref={(el) => (cardsRef.current[index] = el)}
+                className={`service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0`}
                 onClick={() => handleCardClick(service.link)}
                 style={{
-                  animation: `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`,
                   animationDelay: `${index * 0.15}s`,
-                  opacity: 0,
+                  animationName: index % 2 === 0 ? 'slideInRight' : 'slideInLeft',
                 }}
               >
                 <img
@@ -128,6 +151,10 @@ const Services = () => {
 
       {/* Inline CSS for custom animations */}
       <style>{`
+        .service-card.in-view {
+          opacity: 1;
+        }
+
         /* Slide-in animations */
         @keyframes slideInLeft {
           0% { opacity: 0; transform: translateX(-40px); }
