@@ -30,7 +30,7 @@ const services = [
 const Services = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
-  const cardsRef = useRef([]);
+  const [visibleCards, setVisibleCards] = useState(new Set());
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,22 +46,21 @@ const Services = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target); // Stop observing once in view
+            setVisibleCards((prevVisibleCards) => new Set(prevVisibleCards).add(entry.target));
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 } // Adjust threshold as needed
     );
 
-    cardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
+    const cardElements = document.querySelectorAll('.service-card');
+    cardElements.forEach((el) => observer.observe(el));
 
     return () => {
-      cardsRef.current.forEach((card) => observer.unobserve(card));
+      cardElements.forEach((el) => observer.unobserve(el));
     };
-  }, [cardsRef]);
+  }, []);
 
   const handleCardClick = (link) => {
     navigate(link);
@@ -75,17 +74,17 @@ const Services = () => {
         </h2>
 
         {isMobile ? (
-          // Stacked layout for mobile screens with alternating animations on scroll
           <div className="space-y-4">
             {services.map((service, index) => (
               <div
                 key={index}
-                ref={(el) => (cardsRef.current[index] = el)}
-                className={`service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0`}
+                className={`service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 ${visibleCards.has(document.querySelectorAll('.service-card')[index]) ? '' : 'opacity-0'}`}
                 onClick={() => handleCardClick(service.link)}
                 style={{
+                  animation: visibleCards.has(document.querySelectorAll('.service-card')[index])
+                    ? `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`
+                    : 'none',
                   animationDelay: `${index * 0.15}s`,
-                  animationName: index % 2 === 0 ? 'slideInRight' : 'slideInLeft',
                 }}
               >
                 <img
@@ -105,7 +104,6 @@ const Services = () => {
             ))}
           </div>
         ) : (
-          // Swiper slider for larger screens
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={15}
@@ -151,10 +149,6 @@ const Services = () => {
 
       {/* Inline CSS for custom animations */}
       <style>{`
-        .service-card.in-view {
-          opacity: 1;
-        }
-
         /* Slide-in animations */
         @keyframes slideInLeft {
           0% { opacity: 0; transform: translateX(-40px); }
