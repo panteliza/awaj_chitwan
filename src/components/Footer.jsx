@@ -4,7 +4,7 @@ import { BsFacebook, BsGoogle, BsWhatsapp, BsTelephoneFill } from 'react-icons/b
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn, MdHearing } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import footerbgimage from '../assets/footerpic.jpg';
+import footerbgimage from '../assets/digital hearing aids.jpg';
 
 const Footer = () => {
   const navItems1 = [
@@ -56,7 +56,7 @@ const Footer = () => {
       }}
     >
       {/* Darker red overlay */}
-      <div className="absolute inset-0 bg-red-700 opacity-40 z-0"></div>
+      <div className="absolute inset-0 bg-red-800 opacity-70 z-0"></div>
 
       <div
         ref={footerRef}
@@ -69,7 +69,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center gap-5">
           <Link to="/">
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[200px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[220px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110" />
           </Link>
           
           <div className='flex gap-2 text-white text-[25px]'>

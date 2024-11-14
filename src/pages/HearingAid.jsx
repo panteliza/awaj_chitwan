@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import hearingAidTrial1 from "../assets/hearingaid.png";
+import hearingAidTrial1 from "../assets/digi 1.jpeg";
 import hearingAidTrial2 from "../assets/digital-hearing-aids.jpg";
 
 const HearingAidTrialsAndFittings = () => {
