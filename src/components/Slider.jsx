@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
-import 'swiper/css';
 import hearing1 from '../assets/last1.jpg';
 import hearing2 from '../assets/manpic.jpg';
 import hearing3 from '../assets/last3.jpg';
@@ -12,7 +11,6 @@ import hearing5 from '../assets/tinnitus2.jpg';
 import hearing6 from '../assets/oae.png';
 import hearing7 from '../assets/digital hearing aids.jpg';
 import hearing8 from '../assets/Ear-anatomy-with-probe-inserted.jpg';
- 
 
 export default function Slider() {
   return (
@@ -28,42 +26,74 @@ export default function Slider() {
       >
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing1} className="h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing1}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing2} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing2}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing3} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing3}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing4} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing4}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing5} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing5}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing6} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing6}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing7} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing7}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full">
-            <img src={hearing8} className=" h-[500px] sm:h-[640px] 2xl:h-[900px] w-full object-cover" alt="Slider" />
+            <img
+              src={hearing8}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
           </div>
         </SwiperSlide>
       </Swiper>
