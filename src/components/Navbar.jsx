@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar */}
       {show && (
-        <div className="lg:hidden flex flex-col w-[300px] top-0 fixed h-full left-0 gap-2  z-[1]">
+        <div className="lg:hidden flex flex-col w-[300px] top-0 fixed h-full left-0 gap-2  z-[1] bg-white">
           <div className="flex justify-end pr-4 py-3">
             <MdOutlineClose className="text-[30px]" onClick={showIt} />
           </div>
