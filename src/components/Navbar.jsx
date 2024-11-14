@@ -81,7 +81,7 @@ const Navbar = () => {
           <div className="flex justify-end pr-4 py-3">
             <MdOutlineClose className="text-[30px]" onClick={showIt} />
           </div>
-          <div className="flex gap-2 bg-gradient-to-r from-red-300 via-red-400 to-red-300 justify-center">
+          <div className="flex gap-2  justify-center">
           
             <img src={aawazLogo} alt="Aawaz Logo" className="h-[60px] w-[120px] rounded-full object-contain" />
             
