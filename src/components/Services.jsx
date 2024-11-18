@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 
-// Images
 import invisibleinthecanal from '../assets/ab.jpg';
 import intheear from '../assets/cd.jpg';
 import receiverincanal from '../assets/digi 1.jpeg';
@@ -15,7 +14,6 @@ import otoacoustic from '../assets/oae.png';
 import tinnitus from '../assets/tinnitus2.jpg';
 import arb from '../assets/ABR.jpg';
 
-// Services Data
 const services = [
   { title: 'Hearing Tests', description: 'Comprehensive hearing tests to assess your hearing health.', imgSrc: invisibleinthecanal, link: '/hearing-tests' },
   { title: 'Speech And Language Therapy', description: 'Personalized care for speech, language, and communication needs.', imgSrc: intheear, link: '/speech-and-language-therapy' },
@@ -32,40 +30,37 @@ const Services = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle Scroll and IntersectionObserver to trigger animation
   useEffect(() => {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.service-card').forEach((el) => el.classList.add('visible'));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Add class when the element is in view
-            observer.unobserve(entry.target); // Stop observing once the card is visible
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 } // Trigger when 20% of the element is visible
+      { threshold: 0.2 }
     );
 
-    // Select all service cards for observing
     const cardElements = document.querySelectorAll('.service-card');
     cardElements.forEach((el) => observer.observe(el));
 
-    return () => {
-      cardElements.forEach((el) => observer.unobserve(el)); // Cleanup observer
-    };
+    return () => observer.disconnect();
   }, []);
 
-  const handleCardClick = (link) => {
-    navigate(link);
-  };
+  const handleCardClick = (link) => navigate(link);
 
   return (
     <section className="py-8 bg-gray-50">
@@ -81,10 +76,7 @@ const Services = () => {
                 key={index}
                 className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
                 onClick={() => handleCardClick(service.link)}
-                style={{
-                  animation: `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`,
-                  animationDelay: `${index * 0.15}s`,
-                }}
+                style={{ '--animation-delay': `${index * 0.15}s` }}
               >
                 <img
                   src={service.imgSrc}
@@ -92,12 +84,8 @@ const Services = () => {
                   className="w-full h-40 sm:h-48 md:h-56 object-cover"
                 />
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">
-                    {service.description}
-                  </p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">{service.title}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -107,10 +95,7 @@ const Services = () => {
             modules={[Autoplay, Pagination]}
             spaceBetween={15}
             slidesPerView={1}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
             breakpoints={{
               640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
@@ -123,7 +108,7 @@ const Services = () => {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
+                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-1"
                   onClick={() => handleCardClick(service.link)}
                 >
                   <img
@@ -132,12 +117,8 @@ const Services = () => {
                     className="w-full h-40 sm:h-48 md:h-56 object-cover"
                   />
                   <div className="p-4 md:p-6">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm sm:text-base">
-                      {service.description}
-                    </p>
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">{service.title}</h3>
+                    <p className="text-gray-600 text-sm sm:text-base">{service.description}</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -146,9 +127,8 @@ const Services = () => {
         )}
       </div>
 
-      {/* Inline CSS for custom animations */}
+      {/* Inline CSS for animations */}
       <style>{`
-        /* Slide-in animations */
         @keyframes slideInLeft {
           0% { opacity: 0; transform: translateX(-40px); }
           100% { opacity: 1; transform: translateX(0); }
@@ -159,10 +139,14 @@ const Services = () => {
           100% { opacity: 1; transform: translateX(0); }
         }
 
-        /* When the card is visible, apply the animation */
+        .service-card {
+          animation: var(--slideIn, slideInLeft) 1s ease-out;
+          animation-delay: var(--animation-delay, 0s);
+          animation-fill-mode: forwards;
+        }
+
         .service-card.visible {
           opacity: 1;
-          animation: var(--slideIn) 1s ease-out forwards;
         }
       `}</style>
     </section>
