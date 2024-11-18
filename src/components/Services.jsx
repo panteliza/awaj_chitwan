@@ -1,47 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Autoplay, Pagination } from 'swiper/modules';
 
-import invisibleinthecanal from '../assets/ab.jpg';
-import intheear from '../assets/cd.jpg';
-import receiverincanal from '../assets/digi 1.jpeg';
-import ptaTest from '../assets/ptatest.jpg';
-import tympanometry from '../assets/tymp.png';
-import otoacoustic from '../assets/oae.png';
-import tinnitus from '../assets/tinnitus2.jpg';
-import arb from '../assets/ABR.jpg';
-
+// Services Data
 const services = [
-  { title: 'Hearing Tests', description: 'Comprehensive hearing tests to assess your hearing health.', imgSrc: invisibleinthecanal, link: '/hearing-tests' },
-  { title: 'Speech And Language Therapy', description: 'Personalized care for speech, language, and communication needs.', imgSrc: intheear, link: '/speech-and-language-therapy' },
-  { title: 'Hearing Aid Trial And Fittings', description: 'Get the perfect fit and improved hearing with our aid trial.', imgSrc: receiverincanal, link: '/hearing-aid-trial-and-fittings' },
-  { title: 'PTA Test (Diagnostic Audiometer)', description: 'Measure hearing thresholds for hearing loss assessment.', imgSrc: ptaTest, link: '/pta-test' },
-  { title: 'Tympanometry & Stapedius Reflex Test', description: 'Assess middle ear function for better diagnosis.', imgSrc: tympanometry, link: '/tympanometry-stapedius' },
-  { title: 'Tinnitus Retraining Therapy (TRT)', description: 'Provide therapeutic support to manage tinnitus perception.', imgSrc: tinnitus, link: '/tinnitus-retraining-therapy' },
-  { title: 'Otoacoustic Emissions (OAE)', description: 'Identify cochlear function, vital for newborn hearing tests.', imgSrc: otoacoustic, link: '/otoacostic-emission' },
-  { title: 'Auditory-brainstem-response', description: 'Assess auditory nerve and brainstem function for hearing and neurological diagnosis.', imgSrc: arb, link: '/auditory-brainstem-response' },
+  { title: 'Hearing Tests', description: 'Comprehensive hearing tests to assess your hearing health.', imgSrc: '../assets/ab.jpg', link: '/hearing-tests' },
+  { title: 'Speech And Language Therapy', description: 'Personalized care for speech, language, and communication needs.', imgSrc: '../assets/cd.jpg', link: '/speech-and-language-therapy' },
+  { title: 'Hearing Aid Trial And Fittings', description: 'Get the perfect fit and improved hearing with our aid trial.', imgSrc: '../assets/digi 1.jpeg', link: '/hearing-aid-trial-and-fittings' },
+  { title: 'PTA Test (Diagnostic Audiometer)', description: 'Measure hearing thresholds for hearing loss assessment.', imgSrc: '../assets/ptatest.jpg', link: '/pta-test' },
+  { title: 'Tympanometry & Stapedius Reflex Test', description: 'Assess middle ear function for better diagnosis.', imgSrc: '../assets/tymp.png', link: '/tympanometry-stapedius' },
+  { title: 'Tinnitus Retraining Therapy (TRT)', description: 'Provide therapeutic support to manage tinnitus perception.', imgSrc: '../assets/tinnitus2.jpg', link: '/tinnitus-retraining-therapy' },
+  { title: 'Otoacoustic Emissions (OAE)', description: 'Identify cochlear function, vital for newborn hearing tests.', imgSrc: '../assets/oae.png', link: '/otoacostic-emission' },
+  { title: 'Auditory-brainstem-response', description: 'Assess auditory nerve and brainstem function for hearing and neurological diagnosis.', imgSrc: '../assets/ABR.jpg', link: '/auditory-brainstem-response' },
 ];
 
 const Services = () => {
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('.service-card').forEach((el) => el.classList.add('visible'));
-      return;
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -51,16 +26,14 @@ const Services = () => {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 } // Trigger animation when 20% of the element is visible
     );
 
-    const cardElements = document.querySelectorAll('.service-card');
-    cardElements.forEach((el) => observer.observe(el));
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach((card) => observer.observe(card));
 
-    return () => observer.disconnect();
+    return () => cards.forEach((card) => observer.unobserve(card));
   }, []);
-
-  const handleCardClick = (link) => navigate(link);
 
   return (
     <section className="py-8 bg-gray-50">
@@ -68,85 +41,67 @@ const Services = () => {
         <h2 className="font-bold text-center text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] text-red-600 mb-8">
           Our Services
         </h2>
-
-        {isMobile ? (
-          <div className="space-y-4">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
-                onClick={() => handleCardClick(service.link)}
-                style={{ '--animation-delay': `${index * 0.15}s` }}
-              >
-                <img
-                  src={service.imgSrc}
-                  alt={service.title}
-                  className="w-full h-40 sm:h-48 md:h-56 object-cover"
-                />
-                <div className="p-4 md:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">{service.title}</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">{service.description}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transform opacity-0`}
+              style={{
+                '--animation-direction': index % 2 === 0 ? 'slideInLeft' : 'slideInRight',
+              }}
+              onClick={() => navigate(service.link)}
+            >
+              <img
+                src={service.imgSrc}
+                alt={service.title}
+                className="w-full h-40 sm:h-48 md:h-56 object-cover"
+              />
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  {service.description}
+                </p>
               </div>
-            ))}
-          </div>
-        ) : (
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            spaceBetween={15}
-            slidesPerView={1}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            loop={true}
-            pagination={{ clickable: true }}
-            className="swiper-container"
-          >
-            {services.map((service, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-1"
-                  onClick={() => handleCardClick(service.link)}
-                >
-                  <img
-                    src={service.imgSrc}
-                    alt={service.title}
-                    className="w-full h-40 sm:h-48 md:h-56 object-cover"
-                  />
-                  <div className="p-4 md:p-6">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">{service.title}</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">{service.description}</p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Inline CSS for animations */}
+      {/* Animation Styles */}
       <style>{`
+        /* Keyframes for slide-in animations */
         @keyframes slideInLeft {
-          0% { opacity: 0; transform: translateX(-40px); }
-          100% { opacity: 1; transform: translateX(0); }
+          0% {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
 
         @keyframes slideInRight {
-          0% { opacity: 0; transform: translateX(40px); }
-          100% { opacity: 1; transform: translateX(0); }
+          0% {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
 
+        /* Add animation only when visible */
         .service-card {
-          animation: var(--slideIn, slideInLeft) 1s ease-out;
-          animation-delay: var(--animation-delay, 0s);
-          animation-fill-mode: forwards;
+          transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .service-card.visible {
           opacity: 1;
+          animation: var(--animation-direction) 1s ease forwards;
         }
       `}</style>
     </section>
