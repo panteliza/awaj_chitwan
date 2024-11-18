@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 // Correctly imported images
 import invisibleinthecanal from '../assets/ab.jpg';
 import intheear from '../assets/cd.jpg';
-import receiverincanal from '../assets/digi1.jpeg';
+import receiverincanal from '../assets/digi 1.jpeg';
 import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
