@@ -28,7 +28,7 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing1}
-              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
@@ -37,7 +37,7 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing2}
-              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
@@ -46,7 +46,7 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing3}
-              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
@@ -55,7 +55,7 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing4}
-              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
@@ -64,7 +64,7 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing5}
-              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
