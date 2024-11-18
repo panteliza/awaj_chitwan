@@ -5,7 +5,7 @@ import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import aawazLogo from '../assets/aawazmain.jpeg';
+import aawazLogo from '../assets/Main logo.png';
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
