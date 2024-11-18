@@ -69,7 +69,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center gap-5">
           <Link to="/">
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[220px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110 text-white" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[240px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110 text-white" />
           </Link>
           
           <div className='flex gap-2 text-white text-[25px]'>
