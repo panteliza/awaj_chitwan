@@ -21,7 +21,7 @@ const ABRTest = () => {
         </h1>
 
         {/* Description Section */}
-        <div className="max-w-3xl text-center text-gray-700 slideIn">
+        <div className="max-w-3xl text-center text-gray-700 fadeIn">
           <p className="text-lg">
             The Auditory Brainstem Response (ABR) test is a reliable diagnostic tool offered at Aawaj Hearing and Speech Center. This test measures the brain's response to sounds and is used to assess hearing and neurological function, especially in individuals who cannot undergo standard hearing tests.
           </p>
@@ -32,16 +32,16 @@ const ABRTest = () => {
         </div>
 
         {/* Images Section */}
-        <div className="flex flex-col sm:flex-row items-center gap-6 slideIn">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
             src={abrImage1}
             alt="ABR Test Equipment"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageLeft"
           />
           <img
             src={abrImage2}
             alt="Audiologist Conducting ABR Test"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageRight"
           />
         </div>
       </div>
@@ -55,17 +55,35 @@ const ABRTest = () => {
           100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideIn {
-          0% { opacity: 0; transform: translateX(-60px); }
+        @keyframes slideInLeft {
+          0% { opacity: 0; transform: translateX(-100px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+          0% { opacity: 0; transform: translateX(100px); }
           100% { opacity: 1; transform: translateX(0); }
         }
 
         .fadeIn {
-          animation: fadeIn 2s ease-in-out forwards;
+          animation: fadeIn 1.5s ease-in-out forwards;
         }
 
-        .slideIn {
-          animation: slideIn 2s ease-in-out forwards;
+        .imageLeft {
+          animation: slideInLeft 2s ease-in-out forwards;
+        }
+
+        .imageRight {
+          animation: slideInRight 2s ease-in-out forwards;
+        }
+
+        @media (max-width: 640px) {
+          .imageLeft {
+            animation: slideInLeft 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
+          .imageRight {
+            animation: slideInRight 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
         }
       `}</style>
     </div>
