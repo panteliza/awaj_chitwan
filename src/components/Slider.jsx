@@ -36,12 +36,13 @@ export default function Slider() {
         <SwiperSlide>
           <div className="w-full">
             <img
-              src={hearing4}
+              src={hearing6}
               className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
           </div>
         </SwiperSlide>
+       
         <SwiperSlide>
           <div className="w-full">
             <img
@@ -60,20 +61,21 @@ export default function Slider() {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full">
-            <img
-              src={hearing6}
-              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
-              alt="Slider"
-            />
-          </div>
-        </SwiperSlide>
+       
         
         <SwiperSlide>
           <div className="w-full">
             <img
               src={hearing5}
+              className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-full">
+            <img
+              src={hearing4}
               className="w-full h-[300px] sm:h-[600px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
