@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import aawazLogo from '../assets/aawazmain.jpeg';
+import aawazLogo from '../assets/Main logo.png';
 import { BsFacebook, BsGoogle, BsWhatsapp, BsTelephoneFill } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn, MdHearing } from "react-icons/md";
@@ -56,7 +56,7 @@ const Footer = () => {
       }}
     >
       {/* Darker red overlay */}
-      <div className="absolute inset-0 bg-red-800 opacity-70 z-0"></div>
+      <div className="absolute inset-0 bg-red-800 opacity-50 z-0"></div>
 
       <div
         ref={footerRef}
@@ -69,7 +69,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center gap-5">
           <Link to="/">
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[220px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[63px] w-[220px] rounded-full transition-transform duration-700 ease-in-out hover:scale-110 text-white" />
           </Link>
           
           <div className='flex gap-2 text-white text-[25px]'>
