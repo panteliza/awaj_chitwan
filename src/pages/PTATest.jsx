@@ -1,13 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ptaTest1 from "../assets/ptatest2.jpg"; // Update with actual image file paths if different
 import ptaTest2 from "../assets/ptatest.jpg";
 
 const PTATest = () => {
-  // Scroll to the top when the component mounts
+  const imageRefs = useRef([]);
+
+  // Scroll effect: Trigger animations when images come into view
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    imageRefs.current.forEach((image) => observer.observe(image));
+
+    return () => {
+      imageRefs.current.forEach((image) => observer.unobserve(image));
+    };
   }, []);
 
   return (
@@ -35,14 +52,16 @@ const PTATest = () => {
         {/* Images Section */}
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
+            ref={(el) => imageRefs.current.push(el)}
             src={ptaTest1}
             alt="Diagnostic Audiometer"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageLeft"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-all duration-700 ease-in-out fadeLeft opacity-0"
           />
           <img
+            ref={(el) => imageRefs.current.push(el)}
             src={ptaTest2}
             alt="Audiologist Performing PTA Test"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageRight"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-all duration-700 ease-in-out fadeRight opacity-0"
           />
         </div>
       </div>
@@ -51,39 +70,46 @@ const PTATest = () => {
 
       {/* Inline CSS for Enhanced Animations */}
       <style>{`
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(60px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideInLeft {
-          0% { opacity: 0; transform: translateX(-100px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes slideInRight {
-          0% { opacity: 0; transform: translateX(100px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-
         .fadeIn {
           animation: fadeIn 1.5s ease-in-out forwards;
         }
 
-        .imageLeft {
-          animation: slideInLeft 2s ease-in-out forwards;
+        .fadeLeft {
+          transform: translateX(-100px);
+          opacity: 0;
         }
 
-        .imageRight {
-          animation: slideInRight 2s ease-in-out forwards;
+        .fadeRight {
+          transform: translateX(100px);
+          opacity: 0;
+        }
+
+        .visible.fadeLeft {
+          transform: translateX(0);
+          opacity: 1;
+        }
+
+        .visible.fadeRight {
+          transform: translateX(0);
+          opacity: 1;
         }
 
         @media (max-width: 640px) {
-          .imageLeft {
-            animation: slideInLeft 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          .fadeLeft {
+            transform: translateX(-150px);
           }
-          .imageRight {
-            animation: slideInRight 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          .fadeRight {
+            transform: translateX(150px);
+          }
+
+          .visible.fadeLeft,
+          .visible.fadeRight {
+            animation: fadeInMobile 2s ease-in-out forwards;
+          }
+
+          @keyframes fadeInMobile {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
           }
         }
       `}</style>
