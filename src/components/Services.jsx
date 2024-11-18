@@ -8,7 +8,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 // Correctly imported images
 import invisibleinthecanal from '../assets/ab.jpg';
 import intheear from '../assets/cd.jpg';
-import receiverincanal from '../assets/digi 1.jpeg'; // Removed space from file name
+import receiverincanal from '../assets/digi1.jpeg';
 import ptaTest from '../assets/ptatest.jpg';
 import tympanometry from '../assets/tymp.png';
 import otoacoustic from '../assets/oae.png';
@@ -41,25 +41,27 @@ const Services = () => {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    if (isMobile) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
 
-    const cardElements = document.querySelectorAll('.service-card');
-    cardElements.forEach((el) => observer.observe(el));
+      const cardElements = document.querySelectorAll('.service-card');
+      cardElements.forEach((el) => observer.observe(el));
 
-    return () => {
-      cardElements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
+      return () => {
+        cardElements.forEach((el) => observer.unobserve(el));
+      };
+    }
+  }, [isMobile]);
 
   const handleCardClick = (link) => {
     navigate(link);
@@ -77,10 +79,10 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
+                className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer opacity-0"
                 onClick={() => handleCardClick(service.link)}
                 style={{
-                  animation: `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'} 1s ease-out forwards`,
+                  '--slideIn': `${index % 2 === 0 ? 'slideInRight' : 'slideInLeft'}`,
                   animationDelay: `${index * 0.15}s`,
                 }}
               >
@@ -121,7 +123,7 @@ const Services = () => {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-105 opacity-0"
+                  className="service-card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
                   onClick={() => handleCardClick(service.link)}
                 >
                   <img
