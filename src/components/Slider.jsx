@@ -6,8 +6,8 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import hearing1 from '../assets/last1.jpg';
 import hearing2 from '../assets/manpic.jpg';
 import hearing3 from '../assets/last3.jpg';
-import hearing4 from '../assets/more.png';
-import hearing5 from '../assets/tinnitus2.jpg';
+import hearing4 from '../assets/more.png`';
+import hearing5 from '../assets/more2.jpg';
 import hearing6 from '../assets/oae.png';
 import hearing7 from '../assets/digital hearing aids.jpg';
 import hearing8 from '../assets/Ear-anatomy-with-probe-inserted.jpg';
@@ -55,6 +55,15 @@ export default function Slider() {
           <div className="w-full">
             <img
               src={hearing4}
+              className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
+              alt="Slider"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-full">
+            <img
+              src={hearing5}
               className="w-full h-[300px] sm:h-[500px] md:h-[640px] 2xl:h-[900px] object-cover object-center"
               alt="Slider"
             />
