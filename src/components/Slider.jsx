@@ -7,7 +7,7 @@ import hearing1 from '../assets/last1.jpg';
 import hearing2 from '../assets/manpic.jpg';
 import hearing3 from '../assets/last3.jpg';
 import hearing4 from '../assets/more.png`';
-import hearing5 from '../assets/more2.jpg';
+import hearing5 from '../assets/more2.jpeg';
 import hearing6 from '../assets/oae.png';
 import hearing7 from '../assets/digital hearing aids.jpg';
 import hearing8 from '../assets/Ear-anatomy-with-probe-inserted.jpg';
