@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import completelyInCanalImg from '../assets/completelyincanal.jpeg'; // Update with correct path
+import completelyInCanalImg from '../assets/completelyincanal-removebg-preview.png'; // Update with correct path
 
 const CompletelyInCanal = () => {
   const headerRef = useRef(null);

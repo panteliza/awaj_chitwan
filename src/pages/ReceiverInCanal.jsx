@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import receiverInCanalImg from '../assets/receiverinthecanal.jpeg'; // Update with correct path
+import receiverInCanalImg from '../assets/receiverinthecanal-removebg-preview.png'; // Update with correct path
 
 const ReceiverInCanal = () => {
   const headerRef = useRef(null);

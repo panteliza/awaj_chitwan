@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import invisibleInCanalImg from '../assets/invisibleinthecanal.jpeg'; // Update with correct path
+import invisibleInCanalImg from '../assets/invisibleinthecanal-removebg-preview.png'; // Update with correct path
 
 const InvisibleInTheCanal = () => {
   const headerRef = useRef(null);

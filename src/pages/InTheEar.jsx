@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import inTheEarImg from '../assets/intheear.jpeg'; // Update with correct path
+import inTheEarImg from '../assets/intheear-removebg-preview.png'; // Update with correct path
 
 const InTheEar = () => {
   const headerRef = useRef(null);

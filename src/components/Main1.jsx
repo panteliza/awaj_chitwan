@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import behinstheear from '../assets/behindtheear.jpeg';
-import completelyincanal from '../assets/completelyincanal.jpeg';
-import invisibleinthecanal from '../assets/invisibleinthecanal.jpeg';
-import intheear from '../assets/intheear.jpeg';
-import receiverincanal from '../assets/receiverinthecanal.jpeg';
+import behinstheear from '../assets/behindtheear-removebg-preview.png';
+import completelyincanal from '../assets/completelyincanal-removebg-preview.png';
+import invisibleinthecanal from '../assets/invisibleinthecanal-removebg-preview.png';
+import intheear from '../assets/intheear-removebg-preview.png';
+import receiverincanal from '../assets/receiverinthecanal-removebg-preview.png';
 
 export default function App() {
   const [isHovered, setIsHovered] = useState(null);
