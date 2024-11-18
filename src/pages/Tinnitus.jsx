@@ -21,7 +21,7 @@ const TinnitusRetrainingTherapy = () => {
         </h1>
 
         {/* Description Section */}
-        <div className="max-w-3xl text-center text-gray-700 slideIn">
+        <div className="max-w-3xl text-center text-gray-700 fadeIn">
           <p className="text-lg">
             Tinnitus Retraining Therapy (TRT) is an evidence-based treatment offered at Aawaj Hearing and Speech Center to help individuals manage tinnitus. This therapy aims to retrain the brain to perceive tinnitus sounds as neutral, reducing their impact on daily life.
           </p>
@@ -32,16 +32,16 @@ const TinnitusRetrainingTherapy = () => {
         </div>
 
         {/* Images Section */}
-        <div className="flex flex-col sm:flex-row items-center gap-6 slideIn">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
             src={tinnitusImage1}
             alt="Tinnitus Therapy Equipment"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageLeft hover:scale-110"
           />
           <img
             src={tinnitusImage2}
             alt="Audiologist Conducting Tinnitus Retraining Therapy"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageRight hover:scale-110"
           />
         </div>
       </div>
@@ -55,8 +55,13 @@ const TinnitusRetrainingTherapy = () => {
           100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideIn {
+        @keyframes slideInLeft {
           0% { opacity: 0; transform: translateX(-60px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+          0% { opacity: 0; transform: translateX(60px); }
           100% { opacity: 1; transform: translateX(0); }
         }
 
@@ -64,8 +69,21 @@ const TinnitusRetrainingTherapy = () => {
           animation: fadeIn 2s ease-in-out forwards;
         }
 
-        .slideIn {
-          animation: slideIn 2s ease-in-out forwards;
+        .imageLeft {
+          animation: slideInLeft 2s ease-in-out forwards;
+        }
+
+        .imageRight {
+          animation: slideInRight 2s ease-in-out forwards;
+        }
+
+        @media (max-width: 640px) {
+          .imageLeft {
+            animation: slideInLeft 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
+          .imageRight {
+            animation: slideInRight 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
         }
       `}</style>
     </div>
