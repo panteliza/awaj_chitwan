@@ -21,23 +21,23 @@ const HearingTest = () => {
         </h1>
 
         {/* Description Section */}
-        <div className="max-w-3xl text-center text-gray-700 slideIn">
+        <div className="max-w-3xl text-center text-gray-700 fadeIn">
           <p className="text-lg">
             At Aawaj Hearing and Speech Center, we offer a wide range of hearing tests designed to assess and enhance your auditory health. Our state-of-the-art facilities and expert audiologists are here to provide you with a comfortable and accurate hearing assessment. Whether you’re experiencing mild difficulties or significant hearing loss, our tests are tailored to identify your unique needs and guide you towards the best solutions.
           </p>
         </div>
 
         {/* Images Section */}
-        <div className="flex flex-col sm:flex-row items-center gap-6 slideIn">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
             src={hearingTest1}
             alt="Hearing Test Equipment"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageLeft hover:scale-110"
           />
           <img
             src={hearingTest2}
             alt="Audiologist with Patient"
-            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+            className="w-full sm:w-1/2 h-64 rounded-lg shadow-lg object-cover transition-transform duration-700 ease-in-out imageRight hover:scale-110"
           />
         </div>
       </div>
@@ -51,8 +51,13 @@ const HearingTest = () => {
           100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideIn {
+        @keyframes slideInLeft {
           0% { opacity: 0; transform: translateX(-50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+          0% { opacity: 0; transform: translateX(50px); }
           100% { opacity: 1; transform: translateX(0); }
         }
 
@@ -60,8 +65,21 @@ const HearingTest = () => {
           animation: fadeIn 2s ease-in-out forwards;
         }
 
-        .slideIn {
-          animation: slideIn 2s ease-in-out forwards;
+        .imageLeft {
+          animation: slideInLeft 2s ease-in-out forwards;
+        }
+
+        .imageRight {
+          animation: slideInRight 2s ease-in-out forwards;
+        }
+
+        @media (max-width: 640px) {
+          .imageLeft {
+            animation: slideInLeft 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
+          .imageRight {
+            animation: slideInRight 2s ease-in-out forwards, fadeIn 1s ease-in-out forwards;
+          }
         }
       `}</style>
     </div>
