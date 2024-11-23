@@ -55,28 +55,39 @@ const DoctorInfo = () => {
         />
       </div>
 
-      {/* Left Side: Centered Text Content */}
+      {/* Left Side: Text Content */}
       <div
         ref={leftRef}
-        className="md:w-1/2 w-full p-8 text-center md:text-left opacity-0 flex flex-col justify-center items-center md:items-start transition-opacity duration-800"
+        className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left opacity-0 transition-opacity duration-800 space-y-5"
         style={{
           animation: 'fadeInLeft 1s ease-out forwards',
           animationPlayState: 'paused',
         }}
       >
-        <h1 className="text-4xl md:text-4xl font-bold text-red-600">
-          MR. JAYLAL PRASAD YADAV
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed sm:leading-loose sm:text-lg sm:px-4">
-          Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
-          in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
-        </p>
-        <button
-          onClick={handleNavigate}
-          className="bg-red-500 rounded-3xl mt-5 px-4 py-2 text-white text-[18px] hover:text-red-600 hover:bg-red-300"
-        >
-          More About Aawaj
-        </button>
+        {/* Heading */}
+        <div className="w-full">
+          <h1 className="text-4xl md:text-4xl font-bold text-red-600">
+            MR. JAYLAL PRASAD YADAV
+          </h1>
+        </div>
+
+        {/* Information */}
+        <div className="w-full">
+          <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed sm:leading-loose sm:text-lg sm:px-4">
+            Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
+            in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
+          </p>
+        </div>
+
+        {/* Button */}
+        <div className="w-full">
+          <button
+            onClick={handleNavigate}
+            className="bg-red-500 rounded-3xl px-4 py-2 text-white text-[18px] hover:text-red-600 hover:bg-red-300"
+          >
+            More About Aawaj
+          </button>
+        </div>
       </div>
 
       {/* Inline CSS for custom animations */}
