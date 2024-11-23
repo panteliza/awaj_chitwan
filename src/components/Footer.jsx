@@ -13,17 +13,6 @@ const Footer = () => {
     { icon: <MdHearing className='text-white' />, link: "/contact", label: "Contact" }
   ];
 
-  const navItems2 = [
-    { icon: <MdHearing className='text-white' />, link: "/pta-test", label: "PTA Test (Diagnostic Audiometer)" },
-    { icon: <MdHearing className='text-white' />, link: "/tympanometry-stapedius", label: "Tympanometry Test" },
-    { icon: <MdHearing className='text-white' />, link: "/hearing-tests", label: "Hearing Tests And Assessments" },
-    { icon: <MdHearing className='text-white' />, link: "/speech-and-language-therapy", label: "Speech And Language Therapy" },
-    { icon: <MdHearing className='text-white' />, link: "/hearing-aid-trial-and-fittings", label: "Hearing Aid Trial And Fittings" },
-    { icon: <MdHearing className='text-white' />, link: "/tinnitus-retraining-therapy", label: "Tinnitus Retraining Therapy" },
-    { icon: <MdHearing className='text-white' />, link: "/otoacostic-emission", label: "OAE(Otoacostic emission)" },
-    { icon: <MdHearing className='text-white' />, link: "/auditory-brainstem-response", label: "Auditory Brainstem Response" },
-  ];
-
   const contactItems = [
     { icon: <BsTelephoneFill />, link: "tel:+9779855060867", label: "977 9845192771" },
     { icon: <HiOutlineMail />, link: "mailto:aawazclinic42@gmail.com", label: "aawazclinic42@gmail.com" },
@@ -47,7 +36,7 @@ const Footer = () => {
 
   return (
     <div
-      className='relative'
+      className='w-full relative'
       style={{
         backgroundImage: `url(${footerbgimage})`,
         backgroundSize: 'cover',
@@ -86,7 +75,6 @@ const Footer = () => {
         </div>
 
         <NavSection title="Quick Links" items={navItems1} />
-        <NavSection title="Services" items={navItems2} />
 
         <div className='flex flex-col items-center font-semibold text-[18px] gap-2'>
           <div className="font-bold text-[20px] text-white text-center">Aawaj Hearing And Speech Care Center</div>
@@ -96,7 +84,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='text-center py-3 font-semibold text-white bg-red-700'>&copy; 2024 Aawaj Hearing And Speech Care Center. All rights reserved.</div>
+      <div className='text-center py-3 font-semibold text-white bg-red-700 w-full'>&copy; 2024 Aawaj Hearing And Speech Care Center. All rights reserved.</div>
 
       {/* Inline CSS for custom animations */}
       <style>{`
