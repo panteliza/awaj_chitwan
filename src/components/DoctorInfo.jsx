@@ -39,9 +39,6 @@ const DoctorInfo = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6 bg-gray-100">
-      {/* Left Side: Doctor Information */}
-     
-
       {/* Right Side: Doctor Image with Pink Background */}
       <div
         ref={rightRef}
@@ -58,9 +55,10 @@ const DoctorInfo = () => {
         />
       </div>
 
+      {/* Left Side: Doctor Information */}
       <div
         ref={leftRef}
-        className="md:w-1/2 w-full p-8 text-center md:text-left opacity-0 transition-opacity duration-800"
+        className="md:w-1/2 w-full p-8 text-justify sm:text-center md:text-left sm:w-full sm:px-6 opacity-0 transition-opacity duration-800"
         style={{
           animation: 'fadeInLeft 1s ease-out forwards',
           animationPlayState: 'paused',
