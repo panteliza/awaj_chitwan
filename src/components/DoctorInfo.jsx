@@ -74,7 +74,7 @@ const DoctorInfo = () => {
         {/* Information */}
         <div className="w-full">
   <p
-    className="mt-4 text-lg md:text-xl text-transparent bg-clip-text leading-relaxed sm:leading-loose sm:text-lg sm:px-4 text-justify"
+    className="mt-4 text-lg md:text-xl text-transparent bg-clip-text leading-relaxed sm:leading-loose text-justify sm:px-4 px-0"
     style={{
       backgroundImage: 'linear-gradient(to right, #6B21A8, #9333EA, #3B82F6, #F43F5E, #F59E0B)',
     }}
