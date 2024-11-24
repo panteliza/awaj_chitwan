@@ -66,18 +66,23 @@ const DoctorInfo = () => {
       >
         {/* Heading */}
         <div className="w-full">
-          <h1 className="text-4xl md:text-4xl font-bold text-red-600">
+          <h1 className="  text-4xl md:text-4xl font-bold text-red-600">
             MR. JAYLAL PRASAD YADAV
           </h1>
         </div>
 
         {/* Information */}
         <div className="w-full">
-          <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed sm:leading-loose sm:text-lg sm:px-4">
-            Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
-            in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
-          </p>
-        </div>
+  <p
+    className="mt-4 text-lg md:text-xl text-transparent bg-clip-text leading-relaxed sm:leading-loose sm:text-lg sm:px-4"
+    style={{
+      backgroundImage: 'linear-gradient(to right, #6B21A8, #9333EA, #3B82F6, #F43F5E, #F59E0B)',
+    }}
+  >
+    Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
+    in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
+  </p>
+</div>
 
         {/* Button */}
         <div className="w-full">
