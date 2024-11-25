@@ -23,7 +23,7 @@ const images = [
 
 export default function Slider() {
   return (
-    <div className="w-full relative z-[0]">
+    <div className="w-full relative z-[0] mb-2">
       <Swiper
         autoplay={{
           delay: 2500,

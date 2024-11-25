@@ -38,11 +38,11 @@ const DoctorInfo = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center w-full mt-3 bg-gray-100">
+    <div className="flex flex-col md:flex-row items-center justify-center w-full bg-gray-100 p-4">
       {/* Right Side: Doctor Image */}
       <div
         ref={rightRef}
-        className="md:w-1/2 w-full flex items-center justify-center p-0 rounded-lg opacity-0 transition-opacity duration-700"
+        className="md:w-1/2 w-full flex items-center justify-center p-2 rounded-lg opacity-0 transition-opacity duration-700 space-y-5 md:space-y-0"
         style={{
           animation: 'fadeInRight 1s ease-out forwards',
           animationPlayState: 'paused',
@@ -51,14 +51,14 @@ const DoctorInfo = () => {
         <img
           src={doctor1}
           alt="Dr. Jaylal Prasad Yadav"
-          className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg object-cover transform hover:scale-105 transition-transform duration-300"
         />
       </div>
 
       {/* Left Side: Text Content */}
       <div
         ref={leftRef}
-        className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left opacity-0 transition-opacity duration-800 space-y-3 sm:space-y-4"
+        className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left opacity-0 transition-opacity duration-800 space-y-8"
         style={{
           animation: 'fadeInLeft 1s ease-out forwards',
           animationPlayState: 'paused',
