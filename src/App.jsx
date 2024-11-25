@@ -19,6 +19,7 @@ import TympanometryTest from './pages/Tympanometry';
 import TinnitusRetrainingTherapy from './pages/Tinnitus';
 import ABRTest from './pages/auditory';
 import whatsappImage from './assets/whatsapp_733585.png'; // Import WhatsApp image
+import Gallery from './pages/Gallery';
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/otoacostic-emission" element={<OAE />} />
           <Route path="/speech-and-language-therapy" element={<SpeechLanguageTherapy />} />
           <Route path="/auditory-brainstem-response" element={<ABRTest />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/" element={<Home />} />
           <Route path="/aawaz" element={<Home />} />
         </Routes>

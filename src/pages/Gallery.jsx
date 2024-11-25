@@ -1,5 +1,5 @@
 import React from 'react';
-import galleryImg1 from '../assets/hearing1.jpg'; // Replace with your image paths
+import galleryImg1 from '../assets/digital hearing aids.jpg'; // Replace with your image paths
 import galleryImg2 from '../assets/hearing2.jpg';
 import galleryImg3 from '../assets/hearing3.jpg';
 import galleryImg4 from '../assets/hearing4.jpg';
