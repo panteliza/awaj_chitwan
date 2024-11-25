@@ -88,8 +88,10 @@ const Navbar = () => {
            
           </div>
           <Link to='/'>
-            <div className="border border-gray-200 flex gap-2 text-white bg-red-500 hover:bg-red-700 items-center w-[250px] justify-center py-2">Home</div>
-          </Link>
+  <div className="border border-gray-200 flex gap-2 text-white bg-gradient-to-r from-red-500 via-red-600 to-red-500 hover:via-red-700 items-center w-[250px] justify-center py-2 transition-all duration-300">
+    Home
+  </div>
+</Link>
 
           {/* Services Dropdown */}
           <div
