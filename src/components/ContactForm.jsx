@@ -51,7 +51,7 @@ const Contact = () => {
             animationPlayState: 'paused',
           }}
         >
-          <FaMapMarkerAlt className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
+          <FaMapMarkerAlt className="text-red-500 text-4xl mb-4 shiver-icon transition duration-300 hover:text-red-800" />
           <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Our Location
           </h3>
@@ -67,7 +67,7 @@ const Contact = () => {
             animationPlayState: 'paused',
           }}
         >
-          <FaPhoneAlt className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
+          <FaPhoneAlt className="text-red-500 text-4xl mb-4 shiver-icon transition duration-300 hover:text-red-800" />
           <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Our Contact
           </h3>
@@ -83,7 +83,7 @@ const Contact = () => {
             animationPlayState: 'paused',
           }}
         >
-          <FaEnvelope className="text-red-500 text-4xl mb-4 transition duration-300 hover:text-red-800" />
+          <FaEnvelope className="text-red-500 text-4xl mb-4 shiver-icon transition duration-300 hover:text-red-800" />
           <h3 className="font-bold sm:text-[20px] text-[18px] text-gray-800 mb-2">
             Mail Us
           </h3>
@@ -91,7 +91,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Inline CSS for custom animations */}
+      {/* Inline CSS for animations */}
       <style>{`
         @keyframes fadeInLeft {
           0% { opacity: 0; transform: translateX(-60px); }
@@ -104,6 +104,19 @@ const Contact = () => {
         @keyframes fadeInBottom {
           0% { opacity: 0; transform: translateY(60px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stronger Shiver effect for icons */
+        @keyframes shiver {
+          0% { transform: translate(0, 0) rotate(0); }
+          25% { transform: translate(-3px, 3px) rotate(-1deg); }
+          50% { transform: translate(3px, -3px) rotate(1deg); }
+          75% { transform: translate(-3px, -3px) rotate(-1deg); }
+          100% { transform: translate(0, 0) rotate(0); }
+        }
+
+        .shiver-icon {
+          animation: shiver 1s infinite ease-in-out; /* Faster and more noticeable shiver effect */
         }
 
         /* Media queries for responsive adjustments */
