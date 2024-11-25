@@ -88,7 +88,7 @@ const Navbar = () => {
            
           </div>
           <Link to='/'>
-            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Home</div>
+            <div className="border border-gray-200 flex gap-2 text-white bg-red-500 hover:bg-red-700 items-center w-[250px] justify-center py-2">Home</div>
           </Link>
 
           {/* Services Dropdown */}
