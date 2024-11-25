@@ -38,7 +38,7 @@ const DoctorInfo = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6 bg-gray-100">
+    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-5 bg-gray-100">
       {/* Right Side: Doctor Image */}
       <div
         ref={rightRef}
