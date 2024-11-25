@@ -95,9 +95,16 @@ const Services = () => {
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-red-700">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">
-                    {service.description}
-                  </p>
+                  <p
+  className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-700 to-pink-700 text-sm sm:text-base"
+  style={{
+    WebkitBackgroundClip: 'text', // For Safari
+    WebkitTextFillColor: 'transparent', // Ensures full transparency
+  }}
+>
+  {service.description}
+</p>
+
                 </div>
               </div>
             ))}

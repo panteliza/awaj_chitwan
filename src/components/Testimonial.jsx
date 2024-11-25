@@ -81,7 +81,7 @@ function TestimonialPage() {
                     {testimonial.name}
                   </div>
                 </div>
-                <p className="text-gray-600 group-hover:text-white italic mb-3">
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-700 to-pink-700  group-hover:text-white italic mb-3">
                   {testimonial.content}
                 </p>
                 <div className="text-gray-500 group-hover:text-white">
