@@ -55,9 +55,11 @@ export default function App() {
   ];
 
   return (
-    <div className="px-10 relative z-0 flex flex-col justify-center items-center py-16">
-      <div className='flex justify-center font-bold sm:text-[40px] text-[35px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500'>Our Products</div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 justify-center gap-8 2xl:gap-20">
+    <div className="px-5 relative z-0 flex flex-col justify-center items-center py-16">
+      <div className="flex justify-center font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500">
+        Our Products
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8 justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
         {products.map((product, index) => (
           <ProductCard
             key={index}
@@ -116,7 +118,7 @@ const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, o
     <Link to={to} className="no-underline">
       <div
         ref={ref}
-        className={`product-card bg-white rounded-2xl h-[280px] w-[270px] 2xl:h-[300px] 2xl:w-[320px] md:w-[300px] lg:w-[300px] flex flex-col justify-center items-center p-5 border border-red-200 hover:border-gray-400 ${
+        className={`product-card bg-white rounded-2xl h-[180px] w-[150px] sm:h-[220px] sm:w-[180px] md:h-[250px] md:w-[220px] lg:h-[280px] lg:w-[250px] xl:h-[300px] xl:w-[280px] flex flex-col justify-center items-center p-4 border border-red-200 hover:border-gray-400 ${
           isHovered ? 'hovered' : ''
         }`}
         onMouseEnter={onMouseEnter}
@@ -131,9 +133,9 @@ const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, o
         }}
       >
         <div>
-          <img src={image} alt={title} className='w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[200px] lg:h-[200px]' />
+          <img src={image} alt={title} className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] xl:w-[220px] xl:h-[220px]" />
         </div>
-        <div className='text-center sm:py-2 text-[22px] lg:text-[25px]'>{title}</div>
+        <div className="text-center sm:py-2 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">{title}</div>
       </div>
     </Link>
   );
