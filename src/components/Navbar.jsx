@@ -28,7 +28,7 @@ const Navbar = () => {
         <img
             src={aawazLogo}
             alt="Aawaz Logo"
-            className="h-[50px] w-[100px] md:h-[60px] md:w-[120px] lg:h-[80px] lg:w-[160px] xl:h-[100px] xl:w-[180px] 2xl:h-[120px] 2xl:w-[200px] object-contain"
+            className="h-[60px] w-[120px] md:h-[70px] md:w-[130px] lg:h-[80px] lg:w-[160px] xl:h-[100px] xl:w-[180px] 2xl:h-[120px] 2xl:w-[200px] object-contain"
           />
         </div>
       </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
           <div className="flex gap-2  justify-center">
           
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[60px] w-[120px] rounded-full object-contain" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[70px] w-[130px] rounded-full object-contain" />
             
            
           </div>
