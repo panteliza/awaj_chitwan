@@ -117,10 +117,12 @@ const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, o
   return (
     <Link to={to} className="no-underline">
       <div
-        ref={ref}
-        className={`product-card bg-white rounded-2xl h-[180px] w-[150px] sm:h-[220px] sm:w-[180px] md:h-[250px] md:w-[220px] lg:h-[280px] lg:w-[250px] xl:h-[300px] xl:w-[280px] flex flex-col justify-center items-center p-4 border border-red-200 hover:border-gray-400 ${
-          isHovered ? 'hovered' : ''
-        }`}
+  ref={ref}
+  className={`product-card bg-white rounded-2xl h-[180px] w-[170px] sm:h-[220px] sm:w-[180px] md:h-[250px] md:w-[220px] lg:h-[280px] lg:w-[250px] xl:h-[300px] xl:w-[280px] flex flex-col justify-center items-center p-4 border-gray-200 border-2 hover:border-gray-400 shadow-lg hover:shadow-xl ${
+    isHovered ? 'hovered' : ''
+  }`}
+
+
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         style={{
@@ -135,7 +137,15 @@ const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, o
         <div>
           <img src={image} alt={title} className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] xl:w-[220px] xl:h-[220px]" />
         </div>
-        <div className="text-center sm:py-2 text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px]">{title}</div>
+        <div
+  className="text-center sm:py-2 text-[12px] sm:text-[18px] lg:text-[20px] xl:text-[22px] font-semibold text-transparent bg-clip-text"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #1e3a8a, #2563eb, #1d4ed8)', // Dark blue gradient
+  }}
+>
+  {title}
+</div>
+
       </div>
     </Link>
   );
