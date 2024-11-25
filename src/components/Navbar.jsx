@@ -6,6 +6,10 @@ import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import aawazLogo from '../assets/Main logo.png';
+import facebookImg from '../assets/communication_15047435.png'; // Replace with your actual path
+import googleImg from '../assets/google-maps_355980.png'; // Replace with your actual path
+import whatsappImg from '../assets/whatsapp_733585.png'; // Replace with your actual path
+
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -124,16 +128,33 @@ const Navbar = () => {
             <div className="border border-gray-200 flex gap-2  text-white bg-red-500 hover:bg-red-400  items-center w-[250px] justify-center py-2">Contact</div>
           </Link>
           <div className="flex ml-[100px] gap-2 text-red-500 cursor-pointer text-[25px]">
-            <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
-              <BsFacebook className="hover:text-red-600" />
-            </a>
-            <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic" target="_blank" rel="noopener noreferrer">
-              <BsGoogle className="hover:text-red-600" />
-            </a>
-            <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
-              <BsWhatsapp className="hover:text-red-600" />
-            </a>
-          </div>
+  <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
+    <img
+      src={facebookImg}
+      alt="Facebook"
+      className="w-[30px] h-[30px] hover:scale-110 transition-transform"
+    />
+  </a>
+  <a
+    href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src={googleImg}
+      alt="Google Maps"
+      className="w-[30px] h-[30px] hover:scale-110 transition-transform"
+    />
+  </a>
+  <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
+    <img
+      src={whatsappImg}
+      alt="WhatsApp"
+      className="w-[30px] h-[30px] hover:scale-110 transition-transform"
+    />
+  </a>
+</div>
+
         </div>
       )}
 
@@ -149,16 +170,33 @@ const Navbar = () => {
 
       {/* Social Icons in Medium Screens */}
       <div className="hidden md:flex md:text-[30px] 2xl:text-[42px] gap-2 text-red-400 cursor-pointer">
-        <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
-          <BsFacebook className="hover:text-red-600" />
-        </a>
-        <a href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic" target="_blank" rel="noopener noreferrer">
-          <BsGoogle className="hover:text-red-600" />
-        </a>
-        <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
-          <BsWhatsapp className="hover:text-red-600" />
-        </a>
-      </div>
+  <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
+    <img
+      src={facebookImg}
+      alt="Facebook"
+      className="w-[40px] h-[40px] hover:scale-110 transition-transform"
+    />
+  </a>
+  <a
+    href="https://www.google.com/maps/dir/27.705344,84.4131412/aawaz+speech+and+hearing+clinic"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src={googleImg}
+      alt="Google Maps"
+      className="w-[40px] h-[40px] hover:scale-110 transition-transform"
+    />
+  </a>
+  <a href="https://wa.me/9779845192771" target="_blank" rel="noopener noreferrer">
+    <img
+      src={whatsappImg}
+      alt="WhatsApp"
+      className="w-[40px] h-[40px] hover:scale-110 transition-transform"
+    />
+  </a>
+</div>
+
     </div>
   );
 };
