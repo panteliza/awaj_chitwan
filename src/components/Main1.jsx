@@ -138,7 +138,7 @@ const ProductCard = React.forwardRef(({ image, title, isHovered, onMouseEnter, o
           <img src={image} alt={title} className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] xl:w-[220px] xl:h-[220px]" />
         </div>
         <div
-  className="text-center sm:py-2 text-[12px] sm:text-[18px] lg:text-[20px] xl:text-[22px] font-semibold text-transparent bg-clip-text"
+  className="text-center sm:py-2 text-[14px] sm:text-[18px] lg:text-[20px] xl:text-[22px] font-semibold text-transparent bg-clip-text"
   style={{
     backgroundImage: 'linear-gradient(to right, #1e3a8a, #2563eb, #1d4ed8)', // Dark blue gradient
   }}
