@@ -95,7 +95,7 @@ const Navbar = () => {
 
           {/* Services Dropdown */}
           <div
-            className="border border-gray-200 relative flex gap-2 text-red-600 items-center w-[250px] justify-center py-2 cursor-pointer"
+            className="border border-gray-200 relative flex gap-2 text-white bg-red-500 hover:bg-red-400 items-center w-[250px] justify-center py-2 cursor-pointer"
             onClick={toggleDropdown}
           >
             <div>SERVICES</div>
@@ -118,12 +118,12 @@ const Navbar = () => {
 
           {/* Additional Links */}
           <Link to='/about'>
-            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">About</div>
+            <div className="border border-gray-200 flex gap-2 text-white bg-red-500 hover:bg-red-400 items-center w-[250px] justify-center py-2">About</div>
           </Link>
           <Link to='/contact'>
-            <div className="border border-gray-200 flex gap-2 text-red-600 items-center w-[250px] justify-center py-2">Contact</div>
+            <div className="border border-gray-200 flex gap-2  text-white bg-red-500 hover:bg-red-400  items-center w-[250px] justify-center py-2">Contact</div>
           </Link>
-          <div className="flex ml-[100px] gap-2 text-red-400 cursor-pointer text-[25px]">
+          <div className="flex ml-[100px] gap-2 text-red-500 cursor-pointer text-[25px]">
             <a href="https://www.facebook.com/aawazhearing/" target="_blank" rel="noopener noreferrer">
               <BsFacebook className="hover:text-red-600" />
             </a>
