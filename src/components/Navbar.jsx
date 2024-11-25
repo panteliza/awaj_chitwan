@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
           <div className="flex gap-2  justify-center">
           
-            <img src={aawazLogo} alt="Aawaz Logo" className="h-[70px] w-[130px] rounded-full object-contain" />
+            <img src={aawazLogo} alt="Aawaz Logo" className="h-[77px] w-[150px] rounded-full object-contain" />
             
            
           </div>
