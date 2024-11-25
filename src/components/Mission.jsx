@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { SlBadge } from "react-icons/sl";
-import { BiBadge } from "react-icons/bi";
+import MissionImage from '../assets/mission.png'; // Replace with the actual path
+import VisionImage from '../assets/vision.png'; // Replace with the actual path
 
 const Mission = () => {
   const missionRefs = useRef([]);
@@ -36,13 +36,13 @@ const Mission = () => {
 
   const sections = [
     {
-      icon: <SlBadge className="text-[#ee4c4c] text-[40px]" />,
+      image: MissionImage, // Use imported image
       title: "Our Mission",
       text: "To empower individuals with hearing and speech challenges by providing compassionate, innovative care and personalized therapy to enhance communication, confidence, and quality of life.",
       animation: 'slideInLeft 1s ease-out forwards'
     },
     {
-      icon: <BiBadge className="text-[#ee4c4c] text-[40px]" />,
+      image: VisionImage, // Use imported image
       title: "Our Vision",
       text: "To be a leading center for hearing and speech health, known for transforming lives through expert care, education, and a commitment to accessibility and inclusivity.",
       animation: 'slideInRight 1s ease-out forwards'
@@ -62,7 +62,11 @@ const Mission = () => {
               animationPlayState: 'paused'
             }}
           >
-            <div>{section.icon}</div>
+            <img 
+              src={section.image} 
+              alt={section.title} 
+              className="w-[80px] h-[80px] object-cover rounded-full" // Customize styling as needed
+            />
             <div className="font-bold text-gray-700 text-[25px]">{section.title}</div>
             <div className="text-gray-500 text-center">{section.text}</div>
           </div>
