@@ -96,7 +96,7 @@ const Services = () => {
                     {service.title}
                   </h3>
                   <p
-  className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-700 to-pink-700 text-sm sm:text-base"
+  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-700 to-violet-700 text-sm sm:text-base"
   style={{
     WebkitBackgroundClip: 'text', // For Safari
     WebkitTextFillColor: 'transparent', // Ensures full transparency
