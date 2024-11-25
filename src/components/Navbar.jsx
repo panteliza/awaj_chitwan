@@ -78,6 +78,9 @@ const Navbar = () => {
           <div className="hover:text-gray-400 hover:bg-red-200 px-2 py-2 rounded-md">CONTACT US</div>
         </Link>
        
+        <Link to='/gallery'>
+          <div className="hover:text-gray-400 hover:bg-red-200 px-2 py-2 rounded-md">Gallery</div>
+        </Link>
       </div>
 
       {/* Mobile Sidebar */}

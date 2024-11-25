@@ -120,7 +120,7 @@ const ProductCard = React.forwardRef(
       <Link to={to} className="no-underline">
         <div
           ref={ref}
-          className={`product-card bg-white rounded-2xl h-[120px] w-[120px] sm:h-[150px] sm:w-[150px] md:h-[180px] md:w-[180px] lg:h-[220px] lg:w-[220px] xl:h-[250px] xl:w-[250px] flex flex-col justify-center items-center p-4 border-gray-200 border-2 hover:border-gray-400 shadow-lg hover:shadow-xl ${
+          className={`product-card bg-white rounded-2xl h-[120px] w-[120px] sm:h-[160px] sm:w-[160px] md:h-[180px] md:w-[180px] lg:h-[220px] lg:w-[220px] xl:h-[250px] xl:w-[250px] flex flex-col justify-center items-center p-4 border-gray-200 border-2 hover:border-gray-400 shadow-lg hover:shadow-xl ${
             isHovered ? 'hovered' : ''
           }`}
           onMouseEnter={onMouseEnter}

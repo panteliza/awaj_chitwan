@@ -3,7 +3,7 @@ import aawazLogo from '../assets/Main logo.png';
 import facebookImg from '../assets/communication_15047435.png';
 import googleImg from '../assets/google-maps_355980.png';
 import whatsappImg from '../assets/whatsapp_733585.png';
-import footerbgimage from '../assets/digital hearing aids.jpg';
+import footerbgimage from '../assets/bgimage.jpg';
 import { Link } from 'react-router-dom';
 import { HiOutlineMail } from 'react-icons/hi';
 import { MdLocationOn } from 'react-icons/md';
