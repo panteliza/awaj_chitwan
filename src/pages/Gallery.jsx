@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import galleryImg1 from '../assets/digital hearing aids.jpg'; // Replace with your image paths
 import galleryImg2 from '../assets/a.jpg';
 import galleryImg3 from '../assets/ptatest.jpg';
@@ -11,15 +11,36 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Gallery = () => {
+  const cardRefs = useRef([]);
   const [animationClass, setAnimationClass] = useState(false);
 
   useEffect(() => {
-    // Trigger animation when the component is mounted
-    const timer = setTimeout(() => {
-      setAnimationClass(true);
-    }, 100); // Delay to start the animation
+    const observerOptions = {
+      threshold: 0.3, // Trigger when 30% of the element is in view
+    };
 
-    return () => clearTimeout(timer);
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          entry.target.style.opacity = '1';
+        } else {
+          entry.target.style.animationPlayState = 'paused';
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      cardRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
   }, []);
 
   const galleryImages = [
@@ -52,9 +73,14 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className={`relative group overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 ${
-                animationClass ? 'fade-in delay-' + index * 100 : ''
+              ref={(el) => (cardRefs.current[index] = el)}
+              className={`relative group overflow-hidden rounded-lg shadow-lg opacity-0 transform transition-opacity duration-700 ease-out ${
+                index % 2 === 0 ? 'md:order-first' : 'md:order-last'
               }`}
+              style={{
+                animation: 'fadeInAll 1s ease-out forwards',
+                animationPlayState: 'paused',
+              }}
             >
               <img
                 src={image.src}
@@ -76,8 +102,24 @@ const Gallery = () => {
         </div>
       </div>
       <Footer />
+
       {/* Inline Styles for Animations */}
       <style>{`
+        @keyframes fadeInAll {
+          0% {
+            opacity: 0; 
+            transform: translateY(50px) translateX(-30px); /* Move up and slightly left */
+          }
+          20% {
+            transform: translateY(50px) translateX(30px); /* Move up and slightly right */
+          }
+          100% {
+            opacity: 1; 
+            transform: translateY(0) translateX(0); /* End position */
+          }
+        }
+
+        /* Apply general fade-in animation */
         .fade-in {
           opacity: 1;
           transform: translateY(0);
@@ -89,20 +131,12 @@ const Gallery = () => {
           transform: translateY(30px);
         }
 
-        .delay-100 {
-          transition-delay: 0.1s;
-        }
-        .delay-200 {
-          transition-delay: 0.2s;
-        }
-        .delay-300 {
-          transition-delay: 0.3s;
-        }
-        .delay-400 {
-          transition-delay: 0.4s;
-        }
-        .delay-500 {
-          transition-delay: 0.5s;
+        /* Adjustments for smaller screens */
+        @media (max-width: 768px) {
+          @keyframes fadeInAll {
+            0% { opacity: 0; transform: translateY(30px) translateX(-15px); }
+            100% { opacity: 1; transform: translateY(0) translateX(0); }
+          }
         }
       `}</style>
     </div>
