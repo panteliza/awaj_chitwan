@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-10 bg-gray-100">
-      <h2 className="font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-[#ee4c4c] mb-8">
+      <h2 className="font-bold sm:text-[45px] text-[30px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-[#ee4c4c] mb-8">
         Contact Us
       </h2>
 
