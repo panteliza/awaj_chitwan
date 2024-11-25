@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <div className="px-5 relative z-0 flex flex-col justify-center items-center py-16">
-      <div className="flex justify-center font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500">
+      <div className="flex justify-center font-bold sm:text-[40px] text-[35px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500">
         Our Products
       </div>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8 justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">

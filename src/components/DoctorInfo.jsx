@@ -51,7 +51,7 @@ const DoctorInfo = () => {
         <img
           src={doctor1}
           alt="Dr. Jaylal Prasad Yadav"
-          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg object-cover transform hover:scale-105 transition-transform duration-300"
+          className="w-[210px] h-[230px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] rounded-lg shadow-lg object-cover transform hover:scale-105 transition-transform duration-300"
         />
       </div>
 
