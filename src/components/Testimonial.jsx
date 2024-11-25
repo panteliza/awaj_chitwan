@@ -59,7 +59,7 @@ function TestimonialPage() {
   return (
     <div className="pt-2 flex flex-col gap-7">
       <header className="text-[#ee4c4c] text-center">
-        <h1 className="font-bold sm:text-[40px] text-[35px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] animate-header">Our Customer Says</h1>
+        <h1 className="font-bold sm:text-[40px] text-[30px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] animate-header">Our Customer Says</h1>
       </header>
       <main className="container mx-auto px-4 md:px-6">
         <section className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
