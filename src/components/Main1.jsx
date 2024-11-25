@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <div className="px-10 relative z-0 flex flex-col justify-center items-center py-16">
-      <div className='flex justify-center font-bold sm:text-[30px] text-[25px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500'>Our Products</div>
+      <div className='flex justify-center font-bold sm:text-[40px] text-[35px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500'>Our Products</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 justify-center gap-8 2xl:gap-20">
         {products.map((product, index) => (
           <ProductCard

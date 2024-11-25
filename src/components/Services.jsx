@@ -70,7 +70,7 @@ const Services = () => {
   return (
     <section className="py-8 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-center text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] text-red-600 mb-8">
+        <h2 className=" text-center font-bold sm:text-[40px] text-[35px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] text-red-500 mb-8">
           Our Services
         </h2>
 

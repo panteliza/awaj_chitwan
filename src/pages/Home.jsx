@@ -16,7 +16,7 @@ const Home = () => {
       <div className="w-full flex-shrink-0">
         <Slider />
       </div>
-      <div className="w-full flex-shrink-0">
+      <div className="w-full flex-shrink-0 mt-0">
         <DoctorInfo />
       </div>
       <div className="w-full flex-shrink-0">

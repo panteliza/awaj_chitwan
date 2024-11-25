@@ -38,11 +38,11 @@ const DoctorInfo = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-5 bg-gray-100">
+    <div className="flex flex-col md:flex-row items-center justify-center w-full mt-3 bg-gray-100">
       {/* Right Side: Doctor Image */}
       <div
         ref={rightRef}
-        className="md:w-1/2 w-full flex items-center justify-center p-4 rounded-lg opacity-0 transition-opacity duration-700 mt-8 md:mt-0"
+        className="md:w-1/2 w-full flex items-center justify-center p-0 rounded-lg opacity-0 transition-opacity duration-700"
         style={{
           animation: 'fadeInRight 1s ease-out forwards',
           animationPlayState: 'paused',
@@ -50,49 +50,46 @@ const DoctorInfo = () => {
       >
         <img
           src={doctor1}
-          alt="Dr. Alex Thompson"
-          className="w-60 h-59 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+          alt="Dr. Jaylal Prasad Yadav"
+          className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
         />
       </div>
 
       {/* Left Side: Text Content */}
       <div
         ref={leftRef}
-        className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left opacity-0 transition-opacity duration-800 space-y-5"
+        className="md:w-1/2 w-full flex flex-col justify-center items-center md:items-start text-center md:text-left opacity-0 transition-opacity duration-800 space-y-3 sm:space-y-4"
         style={{
           animation: 'fadeInLeft 1s ease-out forwards',
           animationPlayState: 'paused',
         }}
       >
         {/* Heading */}
-        <div className="w-full">
-          <h1 className="  text-4xl md:text-4xl font-bold text-red-600">
-            MR. JAYLAL PRASAD YADAV
-          </h1>
-        </div>
+        <h1 className="text-3xl md:text-4xl font-bold text-red-600">
+          MR. JAYLAL PRASAD YADAV
+        </h1>
 
         {/* Information */}
-        <div className="w-full">
-  <p
-    className="mt-4 text-lg md:text-xl text-transparent bg-clip-text leading-relaxed sm:leading-loose text-justify sm:px-4 px-0"
-    style={{
-      backgroundImage: 'linear-gradient(to right, #6B21A8, #9333EA, #3B82F6, #F43F5E, #F59E0B)',
-    }}
-  >
-    Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
-    in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
-  </p>
-</div>
+        <p
+          className="text-md md:text-lg lg:text-xl leading-relaxed text-justify px-3 sm:px-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, #6B21A8, #9333EA, #3B82F6, #F43F5E, #F59E0B)',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+          }}
+        >
+          Mr. JAYLAL PRASAD YADAV completed his bachelor's and master's degree
+          in Audiology and Speech Language Pathology from M.V Shetty College of Speech and Hearing, Mangalore University. He is currently working as assistant professor at Chitwan Medical College. He has served as the clinical Director of Aawaj hearing and speech care center Bharatpur 10, Chitwan.
+        </p>
 
         {/* Button */}
-        <div className="w-full">
-          <button
-            onClick={handleNavigate}
-            className="bg-red-500 rounded-3xl px-4 py-2 text-white text-[18px] hover:text-red-600 hover:bg-red-300"
-          >
-            More About Aawaj
-          </button>
-        </div>
+        <button
+          onClick={handleNavigate}
+          className="bg-red-500 rounded-3xl px-4 py-2 text-white text-[16px] md:text-[18px] hover:text-red-600 hover:bg-red-300"
+        >
+          More About Aawaj
+        </button>
       </div>
 
       {/* Inline CSS for custom animations */}
