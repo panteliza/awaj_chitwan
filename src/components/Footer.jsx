@@ -101,10 +101,21 @@ const Footer = () => {
           ))}
         </div>
       </div>
-
       <div className="text-center py-3 font-semibold text-white bg-red-600 w-full">
-  <span className="glitter-effect"> &copy; 2024 <span className="glitter-effect-text">Aawaj</span> Hearing And Speech Care Center, Developed & Design by <span className="glitter-effect-text">Clouds Nepal Web Pvt. Ltd. </span>  </span>
+  <span className="glitter-effect">
+    &copy; 2024 <span className="glitter-effect-text">Aawaj</span> Hearing And Speech Care Center, Developed & Design by  
+    {' '}
+    <a 
+      href="https://www.cloudsnepalweb.com/" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="glitter-effect-text"
+    >
+      Clouds Nepal Web Pvt. Ltd.
+    </a>
+  </span>
 </div>
+
 
       {/* Inline CSS for custom animations */}
       <style>{`
