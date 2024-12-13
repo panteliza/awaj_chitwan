@@ -50,7 +50,7 @@ const Footer = () => {
       }}
     >
       {/* Darker red overlay */}
-      <div className="absolute inset-0 bg-red-800 opacity-50 z-0"></div>
+      <div className="absolute inset-0  opacity-50 z-0"></div>
 
       <div
         ref={footerRef}
